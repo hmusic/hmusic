@@ -18,10 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.hmusic.entity.Music;
 import com.hmusic.entity.MusicType;
+import com.hmusic.service.MusicFullService;
 import com.hmusic.service.MusicMusicTypeService;
 import com.hmusic.service.MusicService;
 import com.hmusic.service.MusicTypeService;
 import com.hmusic.service.SingerMusicService;
+import com.hmusic.service.SingerService;
 
 import constants.Config;
 
@@ -33,6 +35,9 @@ public class MusicController {
 	private MusicService musicService;
 	
 	@Autowired
+	private SingerService singerService;
+	
+	@Autowired
 	private MusicTypeService musicTypeService;
 	
 	@Autowired
@@ -41,6 +46,9 @@ public class MusicController {
 	@Autowired
 	private SingerMusicService singerMusicService;
 	
+	@Autowired
+	private MusicFullService musicFullService;
+	
 	/**
      * 歌曲信息列表
      * @return
@@ -48,6 +56,7 @@ public class MusicController {
 	@RequestMapping(value = "/musicList")
 	public ModelAndView musicList(){
 		List<Music> musicList = musicService.findAll();
+		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("musicList", musicList);
 		mv.setViewName("admin/musicList");
