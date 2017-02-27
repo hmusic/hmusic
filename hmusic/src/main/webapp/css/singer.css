@@ -1,0 +1,416 @@
+body {
+    background: url(../img/bg_hui.jpg) 50% 142px repeat-x;
+    min-width: 1240px;
+    overflow-y: scroll;
+}
+
+body{
+	color: #333;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+li{
+	list-style: none;
+}
+
+a{
+	color:black;
+}
+
+input, select, textarea, th {
+    color: #333;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+}
+
+.main{
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mod_data {
+    position: relative;
+    height: 250px;
+    padding-left: 305px;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+.data_cover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 250px;
+}
+
+.data_photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 999px;
+}
+
+.data_cont {
+    padding-top: 31px;
+}
+
+.data_name {
+    overflow: hidden;
+    line-height: 50px;
+    height:50px; 
+}
+
+.data_name_txt{
+	 margin:0;
+}
+
+.data_desc {
+    font-size: 14px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 4px;
+}
+
+.data_desc_txt {
+    float: left;
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 2px;
+}
+
+#desc_show:hover{
+	color:#31c27c;
+	list-style: none;
+}
+
+.popup_data_detail {
+	position: absolute;
+    top: 128px;
+    right: 85px;
+    width: 580px;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0,0,0,.35);
+    border-radius: 4px;
+    border: 0 none;
+}
+
+.popup_data_detail_cont {
+    max-height: 400px;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 30px 5px 30px 10px;
+    overflow-y: auto;
+}
+
+.popup_data_detail_tit {
+    line-height: 22px;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0 0 20px;
+    margin: 0 24px 0 19px;
+}
+
+.popup_data_detail_arrow {
+    background-position: -11px 0;
+    position: absolute;
+    top: -11px;
+    left: 500px;
+    width: 17px;
+    height: 11px;
+    background: url(../img/popup_arrow.png) -11px -17px no-repeat;
+}
+
+.popup_data_detail_cont p {
+    min-height: 22px;
+    text-align: justify;
+    word-break: break-all;
+    margin: 0 24px 0 19px;
+}
+
+.mod_data_statistic {
+    height: 23px;
+    line-height: 23px;
+    overflow: hidden;
+    font-size: 0;
+    list-style-type: disc;
+    margin: 0;
+    padding: 0;
+}
+
+.data_statistic_item {
+    display: inline-block;
+    border-right: solid 1px #c9c9c9;
+    text-align: center;
+    padding-right: 20px;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.data_statistic_item a:hover{
+	color:#31c27c;
+}
+
+.data_statistic_number {
+    font-size: 25px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.data_actions{
+    position: absolute;
+    font-size: 0;
+	bottom: 30px;
+
+}
+
+.mod_btn_green {
+    border: 1px solid #31c27c;
+    background-color: #31c27c;
+    color: #fff;
+        min-width: 74px;
+    text-align: center;
+    line-height: 39px;
+    overflow: hidden; 
+    border-radius: 2px;
+    font-size: 14px;
+    margin-right: 6px;
+    padding: 0 23px;
+    height: 38px;
+    line-height: 38px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.mod_btn_green:hover{
+	color:white;
+	background:#31c27c;
+}
+.mod_part_detail {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.part_detail_hd {
+    overflow: hidden;
+   
+}
+
+.part_detail_tit {
+    float: left;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 58px;
+}
+
+.mod_songlist_toolbar {
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 0;
+}
+
+.button_size{
+	height: 40px;
+	margin-right: 6px;
+	padding: 0 23px;
+	line-height: 39px;
+	   border-radius: 2px;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+.mod_songlist {
+    padding-bottom: 40px;
+    font-size: 14px;
+}
+
+.songlist_header{
+    font-size: 14px;
+   padding-left: 90px;
+    padding-right: 100px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fbfbfd;
+    color: #999;
+    display: list-item;
+    list-style: none;
+
+    position: relative;
+    
+}
+
+.songlist_header_name{
+    float: left;
+    width: 47.685185%;
+}
+
+.songlist_header_author,.songlist_artist,.songlist_header_album{
+    float: left;
+    padding-left: 20px;
+    width: 23.611111%;
+}
+
+.songlist_album, .songlist_artist, .songlist_number, .songlist_other, .songlist_songname, .songlist_time {
+    line-height: 50px;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.songlist_header_time{
+    position: absolute;
+    top: 0;
+    right: 38px;
+    width: 50px;
+}
+
+
+
+.songlist_list{
+    padding-left:0px;
+    
+}
+
+.songlist_list li{
+    list-style: none;
+    display: block;
+    height: 50px;
+}
+
+.songlist_rank
+{
+    width: 90px;
+    height: 50px;
+    float: left;
+}
+
+.songlist_item{
+    padding-left: 90px;
+    padding-right:100px;
+}
+.songlist_edit{
+	top:15px;
+    position: relative;
+    left:20px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+
+}
+
+.songlist_number {
+    float: left;
+    position: relative;
+    top: 0;
+    left: 40px;
+    color: #999;
+    width: 36px;
+}
+
+.songlist_songname{
+    float: left;
+    left:100px;
+    width: 47.685185%;
+    margin-right: 0;
+}
+
+.songlist_songname a:hover{
+    color: #31c27c;
+}
+.songlist_songname_txt{
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 78%;
+    margin-right: 8px;
+}
+
+.songlist_artist
+{
+    float:left;
+}
+.songlist_name{
+    width: 70px;
+    height: 50px;
+    float: left;
+    margin-right: 20px;
+    
+}
+
+.songlist_time{
+    position: relative;
+    float: right;
+    right:-45px;
+}
+
+.songlist_item .mod_list_menu {
+    position: relative;
+    right: -10px;
+    top: 10px;
+    overflow: hidden;
+
+}
+
+.mod_list_menu {
+    font-size: 0;
+    float: right;
+    height: 36px;
+}
+
+.list_menu_item {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+
+.list_menu_item {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.list_menu_icon_add , .list_menu_icon_down, .list_menu_icon_play, .list_menu_icon_share,.list_menu_icon_add_active,.list_menu_icon_down_active,.list_menu_icon_share_active,.list_menu_icon_play_active {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-image: url(../img/icon_list_menu.png?max_age=2592000&v=873fb6560497db4abbe63767018022eb);
+    background-image: -webkit-image-set(url(../img/icon_list_menu.png?max_age=2592000&v=873fb6560497db4abbe63767018022eb) 1x,url(../img/icon_list_menu@2x.png?max_age=2592000&v=873fb6560497db4abbe63767018022eb&v=5b2eee44c015947ffe8d44c5b69fd078) 2x);
+    background-repeat: no-repeat;
+}
+
+.list_menu_icon_share {
+    background-position: 0 -40px;
+}
+
+.list_menu_icon_share_active {
+    background-position: -40px -40px;
+}
+
+.list_menu_icon_down {
+    background-position: 0 -120px;
+}
+
+.list_menu_icon_down_active {
+    background-position: -40px -120px;
+}
+
+.list_menu_icon_add {
+    background-position: 0 -80px;
+}
+
+.list_menu_icon_add_active {
+    background-position: -40px -80px;
+}
+
+.list_menu_icon_play_active {
+    background-position: -40px 0;
+}

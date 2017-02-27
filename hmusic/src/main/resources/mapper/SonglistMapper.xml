@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hmusic.dao.SonglistDao">
+	<insert id="add" parameterType="Songlist">
+		insert into user(songlistname) values(#{songlistname})
+	</insert>
+	
+	<update id="update" parameterType="Songlist">
+		update user set songlistname=#{songlistname} where songlistid = #{songlistid}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from user where songlistid = #{songlistid}
+	</delete>
+	
+	<select id="findByID" parameterType="Integer" resultType="Songlist">
+		select * from user where songlistid = #{songlistid}
+	</select>
+			
+</mapper>

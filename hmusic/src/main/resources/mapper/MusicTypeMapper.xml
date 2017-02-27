@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hmusic.dao.MusicTypeDao">
+	<insert id="addType" parameterType="MusicType">
+		insert into musictype(musictypename) values(#{musictypename})
+	</insert>
+	
+	<update id="update" parameterType="MusicType">
+		update musictype set musictypename=#{musictypename} where musictypeid = #{musictypeid}
+	</update>
+	
+	<delete id="deleteById" parameterType="Integer">
+		delete from musictype where musictypeid = #{musictypeid}
+	</delete>
+	
+	<select id="findById" parameterType="Integer" resultType="MusicType">
+		select * from musictype where musictypeid = #{musictypeid}
+	</select>
+	
+	<select id="findAll" resultMap="musicTypeMap">
+		select * from musictype
+	</select>
+	
+	<resultMap type="MusicType" id="musicTypeMap">
+		<id column="commentid" property="commentid"/>
+		<result column="userid" property="userid"/>
+		<result column="musicid" property="musicid"/>
+		<result column="content" property="content"/>
+		<result column="commenttime" property="commenttime"/>
+		<result column="likenum" property="likenum"/>
+	</resultMap>
+			
+</mapper>

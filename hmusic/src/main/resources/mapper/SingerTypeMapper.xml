@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hmusic.dao.SingerTypeDao">
+	<insert id="addSingerType" parameterType="SingerType">
+		insert into SingerType(singerTypeName) values(#{singerTypeName})
+	</insert>
+	
+	<update id="updateSingerType" parameterType="SingerType">
+		update SingerType set singerTypeName = #{singerTypeName},
+    where singerTypeId = #{id}
+	</update>
+	
+	
+	<delete id="deleteSingerType" parameterType="Integer">
+		delete from SingerType where singerTypeId = #{id}
+	</delete>
+	
+	<select id="findSingerTypeByID" parameterType="Integer" resultType="SingerType">
+		select * from SingerType where singerTypeId = #{id}
+	</select>
+	
+	<resultMap type="SingerType" id="SingerTypeMap">
+		<id column="singerTypeId" property="singerTypeId"/>
+		<result column="singerTypeName" property="singerTypeName"/>
+		<!-- <association property="" column=""></association> -->
+	</resultMap>
+	
+	<select id="findAllSingerType" resultMap="SingerTypeMap">
+		select * from SingerType
+	</select>
+	
+</mapper>

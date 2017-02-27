@@ -1,0 +1,307 @@
+body{
+	font-family:Microsoft YaHei;
+}
+
+body {
+    background: url(../img/bg_hui.jpg) 50% 142px repeat-x;
+    min-width: 1240px;
+    overflow-y: scroll;
+}
+
+a:hover{
+	text-decoration: none;
+}
+.main{
+	height: 1000px;
+	margin: 0 195px ;
+	padding-top: 30px;
+}
+
+.toplist_nav{
+	float: left;
+	width: 180px;
+	height:500px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgba(153,153,153,.2);
+}
+
+.toplist_nav_list{
+	width: 100%;
+}
+
+.toplist_nav_tit{
+	margin: 0 17px 10px 17px;
+	font-size: 20px;
+	line-height: 60px;
+	font-weight: 400;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.toplist_nav_item{
+	
+}
+
+.toplist_nav_link{
+    font-size: 15px;
+    display: block;
+    line-height: 22px;
+    padding: 8px 17px;
+    color: black;
+}
+
+.toplist_nav_link:hover{
+	color: #31c27c;
+}
+.toplist_nav_link_current{
+	background: #31c27c;
+	color: white;
+}
+
+.toplist_nav_link_current:hover{
+	background: #31c27c;
+	color: white;
+}
+
+.mod_toplist{
+	margin-left: 220px;
+}
+
+.toplist_hd{
+	line-height: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+.toplist_tit{
+	float: left;
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0;
+    margin-right: 15px;
+    line-height: 64px;
+}
+
+.button_size{
+	height: 40px;
+	margin-right: 6px;
+	padding: 0 23px;
+	line-height: 39px;
+	   border-radius: 2px;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+.button_current{
+	background: #31c27c;
+    color: white;
+}
+
+.button_current:hover{
+   
+}
+
+.mod_songlist{
+	margin-bottom: 60px;
+}
+
+.songlist_header{
+
+	font-size: 14px;
+	padding-left: 122px;
+	padding-right: 100px;
+	height: 50px;
+    line-height: 50px;
+    background-color: #fbfbfd;
+    color: #999;
+    display: list-item;
+    list-style: none;
+}
+
+.songlist_header_name{
+	float: left;
+	width: 70%;
+}
+
+.songlist_header_author,.songlist_artist{
+	float: left;
+    padding-left: 20px;
+    width: 20%;
+}
+.songlist_header_time{
+	float: left;
+}
+.songlist_list{
+margin:0;
+}
+
+.songlist_list li{
+	list-style: none;
+	display: block;
+}
+
+.songlist_item{
+	padding-left: 82px;
+	padding-right: 100px;
+	height: 80px;
+}
+.songlist_album, .songlist_artist, .songlist_number, .songlist_songname, .songlist_time, .songlist_edit {
+    line-height: 80px;
+    height: 80px;
+    float: left;
+}
+
+.songlist_edit{
+	position: relative;
+	left: 0px;
+	top:30px;
+}
+.songlist_number{
+	line-height: 75px;
+	position: relative;
+    width: 50px;
+    top: 2px;
+    left: 0px;
+    text-align: left;
+    font-size: 24px;
+    color: #333;
+    float: left;
+    margin-left: 20px;
+}
+
+.songlist_number_top {
+    color: #ff4222;
+}
+
+.songlist_songname{
+	width: 70%;
+}
+.songlist_songname_txt{
+	float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 78%;
+    margin-right: 8px;
+}
+
+.songlist_list a{
+	color:black;
+}
+
+.songlist_list a:hover{
+	color:#31c27c;
+}
+
+.songlist_cover{
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 20px;
+    
+}
+
+.songlist_pic{
+	width: 70px;
+	height: 70px;
+}
+
+.songlist_time{
+	position: relative;
+	
+}
+
+.mod_page_nav{
+    clear: both;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 0;
+}
+
+.current{
+	color: #fff;
+	background: #31c27c;
+}
+
+.page ,.prev ,.next {
+    text-decoration: none;
+    color: #a2a2a2;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+
+	font-size: 16px;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 5px;
+  	width: 50px;
+    box-sizing: border-box;
+  
+}
+
+.page a:hover,.prev a:hover,.next a:hover{
+	color: #fff;
+	background: #31c27c;
+}
+
+.active a{
+    background: #31c27c;
+    color:white;
+}
+
+.songlist_item .mod_list_menu {
+    position: relative;
+    right: -10px;
+  
+    top: 20px;
+    overflow: hidden;
+
+}
+.mod_list_menu {
+    font-size: 0;
+    float: right;
+    height: 36px;
+}
+
+.list_menu_item {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.list_menu_icon_add , .list_menu_icon_down, .list_menu_icon_play, .list_menu_icon_share,.list_menu_icon_add_active,.list_menu_icon_down_active,.list_menu_icon_share_active,.list_menu_icon_play_active {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-image: url(../img/icon_list_menu.png?max_age=2592000&v=873fb6560497db4abbe63767018022eb);
+    background-image: -webkit-image-set(url(../img/icon_list_menu.png?max_age=2592000&v=873fb6560497db4abbe63767018022eb) 1x,url(../img/icon_list_menu@2x.png?max_age=2592000&v=873fb6560497db4abbe63767018022eb&v=5b2eee44c015947ffe8d44c5b69fd078) 2x);
+    background-repeat: no-repeat;
+}
+
+.list_menu_icon_share {
+    background-position: 0 -40px;
+}
+
+.list_menu_icon_share_active {
+    background-position: -40px -40px;
+}
+
+.list_menu_icon_down {
+    background-position: 0 -120px;
+}
+
+.list_menu_icon_down_active {
+    background-position: -40px -120px;
+}
+
+.list_menu_icon_add {
+    background-position: 0 -80px;
+}
+
+.list_menu_icon_add_active {
+    background-position: -40px -80px;
+}
+
+.list_menu_icon_play_active {
+    background-position: -40px 0;
+}

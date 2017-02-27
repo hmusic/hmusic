@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hmusic.dao.SingerMusicDao">
+	<insert id="add" parameterType="SingerMusic">
+		insert into singer_music(musicid,singerid) values(#{musicid},#{singerid})
+	</insert>
+	
+	<delete id="deleteByMusicid" parameterType="Integer">
+		delete from singer_music where songlistid = #{musicid}
+	</delete>
+	
+	<delete id="deleteBySingerid" parameterType="Integer">
+		delete from singer_music where songlistid = #{singerid}
+	</delete>
+	
+			
+	<select id="findByMusicid" parameterType="Integer" resultType="SingerMusic">
+		select * from singer_music where musicid = #{musicid}
+	</select>	
+	
+	<select id="findBySingerid" parameterType="Integer" resultMap="singerMusicMap">
+		select * from singer_music where singerid = #{singerid}
+	</select>	
+	
+	<resultMap id="singerMusicMap" type="SingerMusic">
+		<id property="id" column="id"/>
+		<result property="singerid" column="singerid"/>
+		<result property = "musicid" column = "musicid"/>
+	</resultMap>
+	
+</mapper>

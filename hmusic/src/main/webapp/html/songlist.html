@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>歌曲列表</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+		
+		<link rel="stylesheet" href="css/songlist.css">  
+
+		<!-- font-awesome图标 -->
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">  
+
+		<!-- 主页css样式 -->
+		<link rel="stylesheet" href="css/index.css">
+
+		<!-- 页码css样式 -->
+		<link rel="stylesheet" href="css/page_toolbar.css">
+
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+		<!-- 引用js分页插件 -->
+		<script src="js/jqPaginator-1.2.0/dist/jqPaginator.min.js"></script>
+
+		<script src="js/index.js"></script>
+</head>
+<body>
+<!-- 拟态框开始 -->
+	<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+     			<div class="modal-header">
+       				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<h4 class="modal-title" id="myModalLabel">注册</h4>
+     			</div>
+	      		<form class="form-horizontal">
+	     		<div class="modal-body login-form">
+	        
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">用户名</label>
+	        			<div class="col-sm-6">
+	        				<input type="text" class="form-control" id="username" placeholder="用户名" name="">
+	        			</div>
+	        		</div>
+
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">密码</label>
+	        			<div class="col-sm-6">
+	        				<input type="password" class="form-control" id="password" placeholder="密码" name="">
+	        			</div>
+	        		</div>
+
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">确认密码</label>
+	        			<div class="col-sm-6">
+	        				<input type="password" class="form-control" id="password2" placeholder="确认密码" name="">
+	        			</div>
+	        		</div>
+
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">邮箱</label>
+	        			<div class="col-sm-6">
+	        				<input type="email" class="form-control" id="password2" placeholder="邮箱" name="">
+	        			</div>
+	        		</div>
+        		</div>
+	     		<div class="modal-footer">
+	      			<button type="submit" class="btn btn-primary button-center">注册</button>
+	      	
+	      			<label>已有账号&nbsp;&nbsp;</label>
+	        		<button type="button" class="btn btn-success "  data-toggle="modal" data-target="#login" data-dismiss="modal">登录</button>
+	        	</div>
+	            </form>
+   			</div>
+  	    </div>
+	</div>
+
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+     			<div class="modal-header">
+       				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<h4 class="modal-title" id="myModalLabel">登录</h4>
+     			</div>
+	      		<form class="form-horizontal">
+	     		<div class="modal-body login-form">
+	        
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">用户名</label>
+	        			<div class="col-sm-6">
+	        				<input type="text" class="form-control" id="username" placeholder="用户名" name="">
+	        			</div>
+	        		</div>
+
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">密码</label>
+	        			<div class="col-sm-6">
+	        				<input type="password" class="form-control" id="password" placeholder="密码" name="">
+	        			</div>
+	        		</div>
+
+        		</div>
+	     		<div class="modal-footer">
+	      			<button type="submit" class="btn btn-primary button-center">登录</button>
+	      	
+	      			<label>还没有有账号&nbsp;&nbsp;</label>
+	        		<button type="button" class="btn btn-success " data-toggle="modal" data-target="#register" data-dismiss="modal">注册</button>
+	        	</div>
+	            </form>
+   			</div>
+  	    </div>
+	</div>
+	<!-- 拟态框结束 -->
+
+	<!-- 头部代码 START -->
+		<div class="contain-fluid index-header">
+			<div class="row">
+				<div class="col-md-offset-2 col-md-8 top-contain">
+					<h1 class="top-logo">
+						<a href="#">
+							<img src="img/logo.png">
+
+						</a>
+
+					</h1>	
+					
+					
+					<div class="top-search col-md-4 col-md-offset-2 ">
+
+						
+						 <input type="text" class="form-control search-width" placeholder="Search">
+						 <button type="submit" class="btn btn-default float-left"> <i class="fa fa-search "></i></button>
+						
+
+					</div>
+
+					<div class=" col-md-1 top-login">
+						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#login">登录</button>
+
+						
+
+					</div>
+
+
+
+				</div>
+
+				<div class="col-md-offset-3 col-md-6 top-menu">
+					<ul class="menu-link">
+						<li class="col-md-offset-2 col-md-2 top_subnav_item"><a href="index.html" class="top_item">首页</a></li>
+					<li class="col-md-2 top_subnav_item"><a href="singerlist.html" class="top_item ">歌手</a></li>
+					<li class="col-md-2 top_subnav_item"><a href="songlist.html" class="top_item_current">歌曲</a></li>
+					<li class="col-md-2 top_subnav_item"><a href="toplist.html" class="top_item">排行榜</a></li>
+					</ul>
+
+				</div>		
+			</div>
+
+		</div>
+	<!-- 头部代码 END -->
+
+	<!-- 主体代码 START -->
+	<div class="main">
+		<!-- 歌曲类别 START -->
+		<div class="mod_tag">
+			<div class="tag_list" id="song_language">
+				<span class="tag_tit " >语种</span>
+				<a href="javascript:;" class="tag_item tag_item_select">全部</a>
+				<a href="javascript:;" class="tag_item ">国语</a>
+				<a href="javascript:;" class="tag_item ">粤语</a>
+				<a href="javascript:;" class="tag_item ">英语</a>
+				<a href="javascript:;" class="tag_item ">韩语</a>
+				<a href="javascript:;" class="tag_item ">日语</a>
+			</div>
+			
+			<div class="tag_list" id="song_style">
+				<span class="tag_tit" > 流派</span>
+				<a href="javascript:;" class="tag_item tag_item_select">全部</a>
+				<a href="javascript:;" class="tag_item ">流行</a>
+				<a href="javascript:;" class="tag_item ">古典</a>
+				<a href="javascript:;" class="tag_item ">爵士</a>
+				<a href="javascript:;" class="tag_item ">摇滚</a>
+				<a href="javascript:;" class="tag_item ">电子</a>
+				<a href="javascript:;" class="tag_item ">拉丁</a>
+				<a href="javascript:;" class="tag_item ">嘻哈</a>
+				<a href="javascript:;" class="tag_item ">原声</a>
+				<a href="javascript:;" class="tag_item ">乡村</a>
+				<a href="javascript:;" class="tag_item ">民谣</a>
+			</div>
+
+			<div class="tag_list" id="song_time">
+				<span class="tag_tit" > 年代</span>
+				<a href="javascript:;" class="tag_item tag_item_select">全部</a>
+				<a href="javascript:;" class="tag_item ">2017</a>
+				<a href="javascript:;" class="tag_item ">2016</a>
+				<a href="javascript:;" class="tag_item ">2015</a>
+				<a href="javascript:;" class="tag_item ">2014</a>
+				<a href="javascript:;" class="tag_item ">一零年代</a>
+				<a href="javascript:;" class="tag_item ">零零年代</a>
+				<a href="javascript:;" class="tag_item ">九十年代</a>
+				<a href="javascript:;" class="tag_item ">八十年代</a>
+				<a href="javascript:;" class="tag_item ">七十年代</a>
+				<a href="javascript:;" class="tag_item ">六十年代</a>
+			</div>
+		</div>
+		<!-- 歌曲类别 END -->
+
+		<!-- 歌曲展示 START -->
+		<div class="mod_part_detail">
+			<div class="part_detail_hd">
+				<h2 class="part_detail_tit">全部歌曲</h2>
+
+				<div class="part_switch js_sort">
+					<a href="javascript:;" class="part_switch_item part_switch_item_left part_switch_item_select">最新</a>
+					<a href="javascript:;" class="part_switch_item part_switch_item_right">最热</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="mod_playlist mod_playlist_all">
+			<ul class="playlist_list" id="song_list">
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="mod_cover playlist_cover">
+							<a href="#" class="js_song">
+								<img src="img/song1.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="playlist_cover mod_cover">
+							<a href="#" class="js_song">
+								<img src="img/song2.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="playlist_cover mod_cover">
+							<a href="" class="js_song">
+								<img src="img/song3.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>	
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="playlist_cover mod_cover">
+							<a href="" class="js_song">
+								<img src="img/song4.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>	
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="playlist_cover mod_cover">
+							<a href="" class="js_song">
+								<img src="img/song5.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>	
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="playlist_cover mod_cover">
+							<a href="" class="js_song">
+								<img src="img/song6.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>	
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="playlist_cover mod_cover">
+							<a href="" class="js_song">
+								<img src="img/song7.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>	
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="playlist_cover mod_cover">
+							<a href="" class="js_song">
+								<img src="img/song8.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>	
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="playlist_cover mod_cover">
+							<a href="" class="js_song">
+								<img src="img/song9.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+
+				<li class="playlist_item">
+					<div class="playlist_item_box">
+						<div class="playlist_cover mod_cover">
+							<a href="" class="js_song">
+								<img src="img/song10.jpg" class="playlist_pic">
+								<i class="mod_cover-icon_play"></i>
+							</a>	
+						</div>
+						<h4 class="playlist_title">
+							<span class="playlist_title_txt">
+								<a href="" class="js_song">La La Land (Original Motion Picture Soundtrack) (爱乐之城 电影原声带)</a>
+							</span>
+						</h4>
+						<div class="playlist_author">
+						<a href="" class="js_singer">Various Artists (欧美群星)</a>
+							
+						</div>
+						<div class="playlist_other">2016-12-09</div>
+					</div>
+				</li>
+			</ul>
+
+			<!-- 页码div START-->
+			<div class="mod_page_nav" id="page_nav2">
+			
+			</div>
+			<!-- 页码div END-->
+		</div>
+		<!-- 歌曲展示 END -->
+	</div>
+	<!-- 主体代码 END -->
+
+	<!--底部START-->
+	<div class="footer contain-fluid">
+		<div class="section-inner">
+			<div class="footer-copyright">
+				<p>
+					<a href="#" class="关于腾讯">关于腾讯</a> | 
+			
+					<a href="#" class="服务条款">服务条款</a> | 
+					<a href="#" class="用户服务协议">用户服务协议</a> | 
+					<a href="#" class="广告服务">广告服务</a> | 
+					<a href="#" class="客服中心">客服中心</a>
+				</p>
+
+				<p>
+					Copyright © 1998 - 2017 Tencent. 
+					<a href="#" class="All Rights Reserved">All Rights Reserved.</a>
+				</p>
+
+				<p>
+					腾讯公司 
+					<a href="#" title="版权所有">版权所有</a>
+					<a href="#" title="腾讯网络文化经营许可证">腾讯网络文化经营许可证</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!--底部END-->
+</body>
+</html>
+
+<script type="text/javascript">
+$("#song_language a").click(function(){
+	$("#song_language a").removeClass('tag_item_select');
+	$(this).addClass('tag_item_select');
+});
+
+$("#song_style a").click(function(){
+	$("#song_style a").removeClass('tag_item_select');
+	$(this).addClass('tag_item_select');
+});
+
+$("#song_time a").click(function(){
+	$("#song_time a").removeClass('tag_item_select');
+	$(this).addClass('tag_item_select');
+});
+
+$(".js_sort a").click(function(){
+	$(".js_sort a").removeClass('part_switch_item_select');
+	$(this).addClass('part_switch_item_select');
+});
+</script>
+
+<script type="text/javascript">
+   
+    $.jqPaginator('#page_nav2', {
+        totalPages: 100,
+        visiblePages: 5,
+        currentPage: 3,
+        prev: '<li class="prev"><a class="prev" href="javascript:;"><</a></li>',
+        next: '<li class="next"><a class="next" href="javascript:;">></a></li>',
+        page: '<li class="page"><a class="page" href="javascript:;">{{page}}</a></li>',
+        onPageChange: function (num, type) {
+            $('#p2').text(type + '：' + num);
+        }
+    });
+</script>
+

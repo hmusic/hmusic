@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+		
+		<link rel="stylesheet" href="css/singer.css">  
+
+		<!-- font-awesome图标 -->
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">  
+
+		<!-- 主页css样式 -->
+		<link rel="stylesheet" href="css/index.css">  
+
+		<!-- 页码css样式 -->
+		<link rel="stylesheet" href="css/page_toolbar.css">
+		
+		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+		<!-- 引用js分页插件 -->
+		<script src="js/jqPaginator-1.2.0/dist/jqPaginator.min.js"></script>
+
+		<script src="js/index.js"></script>
+
+
+	</head>
+	<body class="pc">
+	<!-- 拟态框开始 -->
+	<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+     			<div class="modal-header">
+       				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<h4 class="modal-title" id="myModalLabel">注册</h4>
+     			</div>
+	      		<form class="form-horizontal">
+	     		<div class="modal-body login-form">
+	        
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">用户名</label>
+	        			<div class="col-sm-6">
+	        				<input type="text" class="form-control" id="username" placeholder="用户名" name="">
+	        			</div>
+	        		</div>
+
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">密码</label>
+	        			<div class="col-sm-6">
+	        				<input type="password" class="form-control" id="password" placeholder="密码" name="">
+	        			</div>
+	        		</div>
+
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">确认密码</label>
+	        			<div class="col-sm-6">
+	        				<input type="password" class="form-control" id="password2" placeholder="确认密码" name="">
+	        			</div>
+	        		</div>
+
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">邮箱</label>
+	        			<div class="col-sm-6">
+	        				<input type="email" class="form-control" id="password2" placeholder="邮箱" name="">
+	        			</div>
+	        		</div>
+        		</div>
+	     		<div class="modal-footer">
+	      			<button type="submit" class="btn btn-primary button-center">注册</button>
+	      	
+	      			<label>已有账号&nbsp;&nbsp;</label>
+	        		<button type="button" class="btn btn-success "  data-toggle="modal" data-target="#login" data-dismiss="modal">登录</button>
+	        	</div>
+	            </form>
+   			</div>
+  	    </div>
+	</div>
+
+	<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
+  		<div class="modal-dialog">
+    		<div class="modal-content">
+     			<div class="modal-header">
+       				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        			<h4 class="modal-title" id="myModalLabel">登录</h4>
+     			</div>
+	      		<form class="form-horizontal">
+	     		<div class="modal-body login-form">
+	        
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">用户名</label>
+	        			<div class="col-sm-6">
+	        				<input type="text" class="form-control" id="username" placeholder="用户名" name="">
+	        			</div>
+	        		</div>
+
+	        		<div class="form-group">
+	        			<label class="col-sm-3 control-label">密码</label>
+	        			<div class="col-sm-6">
+	        				<input type="password" class="form-control" id="password" placeholder="密码" name="">
+	        			</div>
+	        		</div>
+
+        		</div>
+	     		<div class="modal-footer">
+	      			<button type="submit" class="btn btn-primary button-center">登录</button>
+	      	
+	      			<label>还没有有账号&nbsp;&nbsp;</label>
+	        		<button type="button" class="btn btn-success " data-toggle="modal" data-target="#register" data-dismiss="modal">注册</button>
+	        	</div>
+	            </form>
+   			</div>
+  	    </div>
+	</div>
+	<!-- 拟态框结束 -->
+
+	
+	<!-- 头部代码START -->
+		<div class="contain-fluid index-header">
+			<div class="row">
+				<div class="col-md-offset-2 col-md-8 top-contain">
+					<h1 class="top-logo">
+						<a href="#">
+							<img src="img/logo.png">
+
+						</a>
+
+					</h1>	
+					
+					<div class="top-search col-md-4 col-md-offset-2 ">	
+						 <input type="text" class="form-control search-width" placeholder="Search">
+						 <button type="submit" class="btn btn-default float-left"> <i class="fa fa-search "></i></button>	
+					</div>
+
+					<div class=" col-md-1 top-login">
+						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#login">登录</button>		
+					</div>
+				</div>
+
+				<div class="col-md-offset-3 col-md-6 top-menu">
+					<ul class="menu-link">
+						<li class="col-md-offset-2 col-md-2 top_subnav_item"><a href="index.html" class="top_item">首页</a></li>
+					<li class="col-md-2 top_subnav_item"><a href="singerlist.html" class="top_item_current ">歌手</a></li>
+					<li class="col-md-2 top_subnav_item"><a href="songlist.html" class="top_item">歌曲</a></li>
+					<li class="col-md-2 top_subnav_item"><a href="toplist.html" class="top_item">排行榜</a></li>
+					</ul>
+
+				</div>		
+			</div>
+
+		</div>
+	<!-- 头部代码END -->
+
+	<div class="main">
+		<div class="mod_data">
+			<span class="data_cover">
+				<a href="" class="" style="display: none;">
+					<img src="img/singer1.jpg" class="data_photo">
+				</a>
+
+				<img src="img/singer1.jpg" class="data_photo">
+			</span>
+
+			<div class="data_cont">
+				<div class="data_name">
+					<h1 class="data_name_txt"> 薛之谦</h1>
+				</div>
+
+				<div class="data_desc" id="singer_desc">
+					<div class="data_desc_txt">
+						
+外文名：Joker 
+
+国籍：中国 
+
+出生地：上海 
+
+职业：歌手、演员、主持人 
+
+代表作品：《认真的雪》《演员》《丑八怪》《绅士》 
+
+简介：薛之谦，1983年7月17日出生于上海市，中国内地男歌手。 &gt;2006年6月9日，薛之谦发行首张个人原创同名专辑《薛之谦》；2007年在中国原创音乐流行榜上凭借《认真的雪》获得内地金曲奖；2008年11月26日发行第三张个人原创专辑《深深爱过你》；12月20日举行首场演唱会“谦年传说”；2012年7月17日发行专辑《几个薛之谦》。2013年11月发行专辑《意外》。 &gt;2015年4月1日，薛之谦主演《男人帮·朋友》预告片发布；6月10日正式签约海蝶音乐公司，升为制作人。 
+
+从艺历程：2006年6月9日薛之谦发行首张个人原创同名专辑《薛之谦》，他个人包揽了六首曲和五首词的创作，最后的一曲《认真的雪》记录了他第一次深刻的感情经历。 &gt;2007年7月31日发行第二张个人原创专辑《你过得好吗》。 &gt;2008年3月29日在上海大舞台举行的第十五届东方风云榜颁奖盛典献唱《你过得好吗》；7月推出个人单曲《传说》；11月26日发行第三张个人原创专辑《深深爱过你》；12月20日举行首场演唱会“谦年传说”。 &gt;2009年9月21日推出单曲《未完成的歌》，这是薛之谦逾一年的创作，迟迟没有发表是因为一直没有很好的词来配合这首曲，所以他一直等到能让他觉得感动的歌词。 &gt;2011年3月14日推出单曲《我终于成了别人的女人》，这首歌曲的编曲由音乐人常石磊编写，音乐录影带由周杰伦的御用导演珍妮花拍摄。 &gt;2012年7月17日发行专辑《几个薛之谦》，这张专辑筹备期长达两年半，其间，薛之谦陆续发行《我终于成了别人的女人》《伏笔》《几个你》等多首单曲。 &gt;2013年11月发行专辑《意外》，在专辑录制过程中，薛之谦赴新西兰做宣传时赶上入住酒店突发火灾，在泰国拍摄MV时又遭遇车祸；12月，薛之谦在浙江卫视的《我爱记歌词》节目中“金曲K歌王”环节演唱那英的《征服》。 &gt;2015年06月08日全创作EP《绅士》正式在线发布，主打歌《演员》曝MV，6月10日在京举行薛之谦《绅士》全亚洲发布会。10月26日薛之谦全新EP同名主打歌《一半》MV正式发布，展现爱之痛。 2015年11月19日薛之谦专辑新曲《Stay Here》MV首发，纪念自己曾经的倔强和已逝去的爱情。同年搭档朴海镇、张亮参演电视剧《男人帮·朋友》。 &gt;2016年2月16日薛之谦以固定嘉宾加盟综艺节目《谁是大歌神》。2016年3月薛之谦在酷音乐亚洲盛典颁奖典礼上斩获二个大奖，歌曲《演员》1年播放量目前为止高达将近4亿，并凭借《演员》，《一半》等歌曲获得多个奖项。 5月17日发行全新EP《初学者》，6月1日MV上线，这首歌是薛之谦独自包揽词曲，此次再度与金曲奖最佳音乐录像带奖得主黄中平导演合作拍MV。薛之谦一改深情动人的情歌风格，加入摇滚风充满了征战与挑衅的意味，让人听得热血淋漓，大呼过瘾！ 
+
+荣誉记录：东方风云榜 &gt;▪ 2016    第二十三届    十大金曲    《一半》    （获奖）     &gt;▪ 2014    第二十一届    最佳唱作人    （获奖）     &gt;▪ 2014    第二十一届    十大金曲    《意外》    （获奖）     &gt;▪ 2013    第二十届    最具突破创作歌手    （获奖）     &gt;▪ 2013    第二十届    二十年至尊金曲    《认真的雪》    （获奖）     &gt;▪ 2012    第十九届    年度对唱歌曲    《我们爱过就好》    （获奖）     &gt;▪ 2012    第十九届    十大金曲    《我终于成了别人的女人》    （获奖）     &gt;▪ 2010    第十七届    最佳年度飞跃    （获奖）     &gt;▪ 2009    第十六届    最佳舞台演绎奖    （获奖）     &gt;▪ 2008    第十五届    本地最受欢迎歌手    （获奖）     &gt;▪ 2007    第十四届    十大金曲    《认真的雪》    （获奖）     &gt;▪ 2006    第十三届    新人奖银奖    （获奖）     &gt;百事风云榜颁奖盛典 &gt;▪ 2006    内地最受欢迎男歌手五强    （获奖）     &gt;雪碧中国原创音乐流行榜 &gt;▪ 2008    第七届    最具潜质歌手奖    《你过得好吗》    （获奖）     &gt;▪ 2008    第七届    最具潜质歌手大奖    （获奖）     &gt;▪ 2007    第六届    飞跃表现奖    （获奖）     &gt;▪ 2007    第六届    内地金曲    《认真的雪》    （获奖）     &gt;▪ 2006    第五届    新人奖    （获奖）     &gt;全球华语歌曲排行榜  &gt;▪ 2013    第十三届    地区杰出歌手    上海：薛之谦    （获奖）     &gt;▪ 2011    第十一届    地区杰出歌手    上海：薛之谦    （获奖）     &gt;▪ 2011    第十一届    年度二十大金曲    《我终于成了别人的女人》    （获奖）     &gt;▪ 2009    第九届    年度金曲奖    深深爱过你    （获奖）     &gt;▪ 2006    第六届    最受欢迎男新人奖    （获奖）     &gt;中国风尚大典 &gt;▪ 2006    内地风尚新人奖    （获奖）     &gt;第四届特步东南劲爆音乐榜颁奖典礼 &gt;▪ 2006    内地劲爆最受欢迎男歌手奖    （获奖）     &gt;星光大典 &gt;▪ 2006    最具人气偶像奖    （获奖）     &gt;天地英雄校园群英会 &gt;▪ 2006    天地英雄新人奖    （获奖）     &gt;雪碧中国原创音乐流行榜 &gt;▪ 2007    飞跃表现奖    （获奖）     &gt;华语榜中榜颁奖礼 &gt;▪ 2016    第二十届    榜中榜最受欢迎唱作歌手    （获奖）     &gt;▪ 2007    第十三届    传媒推荐奖    （获奖）         &gt;Music Radio中国TOP排行榜 &gt;▪ 2016    年度最佳男歌手    （获奖）     &gt;▪ 2016    2015年年度金曲    《演员》    （获奖）     &gt;▪ 2014    年度传媒推荐男歌手    （获奖）     &gt;▪ 2014    年度最佳金曲    《丑八怪》    （获奖）     &gt;▪ 2013    MusicRadio音乐之声推荐唱片内地    《几个薛之谦》    （获奖）     &gt;▪ 2013    内地最受欢迎男歌手    （提名）     &gt;▪ 2013    内地年度传媒推荐男歌手    （提名）     &gt;▪ 2009    内地最受欢迎男歌手    《你过得好吗》    （获奖）     &gt;▪ 2009    年度最佳舞台演绎奖    （获奖）     &gt;▪ 2009    内地最受欢迎男歌手    （提名）     &gt;▪ 2009    内地最佳男歌手    （提名）     &gt;▪ 2009    内地最佳舞台演绎歌手    （提名）     &gt;▪ 2008    内地年度最受欢迎男歌手    （获奖）     &gt;▪ 2008    内地年度金曲    《你过得好吗》    （获奖）     &gt;▪ 2007    内地校园人气大奖    薛之谦同名专辑    （获奖）      &gt;无线音乐盛典 &gt;▪ 2008    第二届    无线音乐最具潜力创作偶像    （获奖）     &gt;北京流行音乐典礼 &gt;▪ 2009    年度金曲奖    深深爱过你    （获奖）     &gt;▪ 2008    20大金曲    （获奖）     &gt;中国原创歌曲榜颁奖礼 &gt;▪ 2009    内地最佳舞台表现奖    （获奖）     &gt;▪ 2009    最佳专辑奖    深深爱过你    （获奖）     &gt;CCTV风云音乐 &gt;▪ 2010    媒体推荐创新实力歌手奖    （获奖）     &gt;▪ 2010    年度网络最受欢迎金曲奖    （获奖） &gt;全球中文音乐榜上榜 &gt;▪2015    全球中文音乐榜上榜冠军歌曲 《演员》 （获奖）     &gt;酷音乐亚洲盛典 &gt;▪ 2016    年度电视音乐金曲艺人    （获奖）     &gt;▪ 2016    年度最受欢迎创作人    （获奖）     &gt;音悦v榜 &gt;▪ 2016    第四届    年度全能艺人    （获奖）     &gt;▪ 2016    第四届    年度风向艺人    （获奖）     &gt;▪ 2014    第二届    内地年度创作歌手    （获奖） 
+
+社会活动：2007年，薛之谦作为流行音乐的代表,和其他艺术家一起前往俄罗斯，参加由中华人民共和国文化部和俄罗斯联邦文化电影署联合举办的中国文化节重点项目”沿伏尔加河友谊之旅”，在沿河11个城市作访问演出。 &gt;2008年，薛之谦当选火炬手，在河南省郑州市传递火炬。 &gt;2013年6月2日参加玫琳凯LOVE.自然.KISS环保时尚音乐会。  &gt;2016年3月18日薛之谦暖心支持公益，关爱留守儿童。 
+					</div>
+					<a href="javascript:;" id="desc_show">[更多]</a>
+				</div>
+
+				<ul class="mod_data_statistic">
+					<li class="data_statistic_item">
+						<a href="#">
+							<span class="data_statistic_tit">单曲</span>
+							<strong class="data_statistic_number">94</strong>
+						</a>
+					</li>
+				</ul>
+
+				<div class="data_actions">
+					<a href="#" class="mod_btn_green">
+						<i class="fa fa-play"></i>
+						播放歌手热门歌曲
+					</a>	
+				</div>
+			</div>
+		</div>
+		
+		<div class="mod_part_detail" id="song_tab">
+			<div class="part_detail_hd">
+				<h2 class="part_detail_tit">单曲 94</h2>
+			</div>
+
+			<div class="js_content">
+				<div class="mod_songlist_toolbar">
+					<a href="#" class="button_size btn btn-default">
+						<i class="fa fa-play"></i>
+						播放全部
+					</a>
+
+					<a href="#" class="button_size btn btn-default">
+						<i class="fa fa-plus-square "></i>
+						添加到
+					</a>
+
+					<a href="#" class="button_size btn btn-default">
+						<i class="fa fa-download"></i>
+						下载
+					</a>
+				</div>
+
+				<div class="mod_songlist">
+					<div class="songlist_header">
+						<span class="songlist_header_name">歌曲</span>
+						<span class="songlist_header_album">专辑</span>
+						<span class="songlist_header_time">时长</span>
+					</div>
+
+					<ul class="songlist_list" id="song_box">
+						<li>
+							<div class="songlist_rank">
+								<div class="songlist_edit"><input type="checkbox" class="songlist_checkbox"></div>
+								<div class="songlist_number ">1</div>
+							</div>	
+							<div class="songlist_item">
+								<div class="songlist_songname">
+									<span class="songlist_songname_txt"><a href="">火星人来过</a></span>
+								</div>
+
+								<div class="songlist_artist">
+									<span class="singer_name">火星人来过</span>
+								</div>
+								<div class="songlist_time">
+								05:16
+								</div>	
+							</div>	
+						</li>
+
+						<li>
+							<div class="songlist_rank">
+								<div class="songlist_edit"><input type="checkbox" class="songlist_checkbox"></div>
+								<div class="songlist_number ">2</div>
+							</div>	
+							<div class="songlist_item">
+								<div class="songlist_songname">
+									<span class="songlist_songname_txt"><a href="">丑八怪</a></span>
+								</div>
+
+								<div class="songlist_artist">
+									<span class="singer_name">意外</span>
+								</div>
+								<div class="songlist_time">
+								04:08
+								</div>	
+							</div>	
+						</li>
+
+						<li>
+							<div class="songlist_rank">
+								<div class="songlist_edit"><input type="checkbox" class="songlist_checkbox"></div>
+								<div class="songlist_number ">3</div>
+							</div>	
+							<div class="songlist_item">
+								<div class="songlist_songname">
+									<span class="songlist_songname_txt"><a href="">演员</a></span>
+								</div>
+
+								<div class="songlist_artist">
+									<span class="singer_name">绅士</span>
+								</div>
+								<div class="songlist_time">
+								04:21
+								</div>	
+							</div>	
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+
+		<div class="popup_data_detail" id="popup_data_detail" style="z-index: 100;display: none;">
+			<div class="popup_data_detail_cont">
+				<h3 class="popup_data_detail_tit">歌手简介</h3>
+					<p>外文名：Joker</p>
+					<p>国籍：中国</p>
+					<p>出生地：上海</p>
+					<p>职业：歌手、演员、主持人</p>
+					<p>代表作品：《认真的雪》《演员》《丑八怪》《绅士》</p>
+					<p>简介：薛之谦，1983年7月17日出生于上海市，中国内地男歌手。</p>
+					<p>2006年6月9日，薛之谦发行首张个人原创同名专辑《薛之谦》；2007年在中国原创音乐流行榜上凭借《认真的雪》获得内地金曲奖；2008年11月26日发行第三张个人原创专辑《深深爱过你》；12月20日举行首场演唱会“谦年传说”；2012年7月17日发行专辑《几个薛之谦》。2013年11月发行专辑《意外》。</p>
+					<p>2015年4月1日，薛之谦主演《男人帮·朋友》预告片发布；6月10日正式签约海蝶音乐公司，升为制作人。</p>
+					<p>从艺历程：2006年6月9日薛之谦发行首张个人原创同名专辑《薛之谦》，他个人包揽了六首曲和五首词的创作，最后的一曲《认真的雪》记录了他第一次深刻的感情经历。</p>
+					<p>2007年7月31日发行第二张个人原创专辑《你过得好吗》。</p>
+					<p>2008年3月29日在上海大舞台举行的第十五届东方风云榜颁奖盛典献唱《你过得好吗》；7月推出个人单曲《传说》；11月26日发行第三张个人原创专辑《深深爱过你》；12月20日举行首场演唱会“谦年传说”。</p>
+				<i class="popup_data_detail_arrow"></i>
+			</div>
+		</div>
+	</div>
+	<!-- 页码div START-->
+	<div class="mod_page_nav" id="page_nav2">
+		
+	</div>
+	<!-- 页码div END-->
+
+	<!--底部START-->
+	<div class="footer contain-fluid">
+		<div class="section-inner">
+			<div class="footer-copyright">
+				<p>
+					<a href="#" class="关于腾讯">关于腾讯</a> | 
+			
+					<a href="#" class="服务条款">服务条款</a> | 
+					<a href="#" class="用户服务协议">用户服务协议</a> | 
+					<a href="#" class="广告服务">广告服务</a> | 
+					<a href="#" class="客服中心">客服中心</a>
+				</p>
+
+				<p>
+					Copyright © 1998 - 2017 Tencent. 
+					<a href="#" class="All Rights Reserved">All Rights Reserved.</a>
+				</p>
+
+				<p>
+					腾讯公司 
+					<a href="#" title="版权所有">版权所有</a>
+					<a href="#" title="腾讯网络文化经营许可证">腾讯网络文化经营许可证</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!--底部END-->
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+	$('#desc_show').click(function(event){
+		$('#popup_data_detail').show();
+		event.stopPropagation();
+	});
+	
+	$('.pc').click(function(){	
+		$('#popup_data_detail').hide();
+	});
+</script>
+
+<script type="text/javascript">
+   
+    $.jqPaginator('#page_nav2', {
+        totalPages: 100,
+        visiblePages: 5,
+        currentPage: 3,
+        prev: '<li class="prev"><a class="prev" href="javascript:;"><</a></li>',
+        next: '<li class="next"><a class="next" href="javascript:;">></a></li>',
+        page: '<li class="page"><a class="page" href="javascript:;">{{page}}</a></li>',
+        onPageChange: function (num, type) {
+            $('#p2').text(type + '：' + num);
+        }
+    });
+</script>

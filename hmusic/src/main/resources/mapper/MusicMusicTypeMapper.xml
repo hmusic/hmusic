@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hmusic.dao.MusicMusicTypeDao">
+	<insert id="add" parameterType="MusicMusicType">
+		insert into music_musictype(musicid,musictypeid) values(#{musicid},#{musictypeid})
+	</insert>
+	
+	<update id="updateById" parameterType="MusicMusicType">
+		update music_musictype set musictypeid=#{musictypeid} where id = #{id}
+	</update>
+
+	<update id="updateByMusicid" parameterType="MusicMusicType">
+		update music_musictype set musictypeid=#{musictypeid} where musicid = #{musicid}
+	</update>
+	
+	<update id="update">
+		update music_musictype set musictypeid=#{musictypeid} where musicid = #{musicid}
+	</update>
+	
+	<delete id="deleteById" parameterType="Integer">
+		delete from music_musictype where id = #{id}
+	</delete>
+	
+	<delete id="deleteByMusicid" parameterType="Integer">
+		delete from music_musictype where musicid = #{musicid}
+	</delete>
+	
+	<delete id="deleteByMusicTypeId" parameterType="Integer">
+		delete from music_musictype where musictypeid = #{musictypeid} 
+	</delete>
+	
+	<select id="findByMusicid" parameterType="Integer" resultType="MusicMusicType">
+		select * from music_musictype where musicid = #{musicid}
+	</select>
+			
+	<select id="findByMusicTypeId" parameterType="Integer" resultMap="musicMusicTypeMap">
+		select * from music_musictype where musictypeid = #{musictypeid}
+	</select>		
+	
+	<resultMap id="musicMusicTypeMap" type="MusicMusicType">
+		<id property="id" column="id"/>
+		<result property="musictypeid" column="musictypeid"/>
+		<result property = "musicid" column = "musicid"/>
+	</resultMap>
+	
+</mapper>

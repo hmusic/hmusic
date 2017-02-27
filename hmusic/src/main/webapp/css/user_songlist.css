@@ -1,0 +1,248 @@
+body, textarea, select, input, button {
+    font-size: 12px;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-size-adjust: none;
+}
+
+body {
+    background: url(../img/bg_hui.jpg) 50% 142px repeat-x;
+    min-width: 1240px;
+    overflow-y: scroll;
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: #31c27c;
+}
+
+.g-bd{
+    width: 980px;
+    margin: 0 auto;
+    border-width: 1px 1px;
+}
+
+.g-wrap {
+    padding: 40px;
+}
+
+
+.u-title {
+    height: 40px;
+
+}
+
+.u-title-2 {
+    border-bottom: none;
+}
+
+
+.u-title h3 {
+    float: left;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.f-ff2 {
+    font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.main{
+	height: 1000px;
+	margin: 0 195px ;
+	padding-top: 60px;
+}
+
+.toplist_nav{
+	float: left;
+	width: 180px;
+	height:500px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgba(153,153,153,.2);
+}
+
+.toplist_nav_list{
+	width: 100%;
+}
+
+.toplist_nav_tit{
+	margin: 0 17px 10px 17px;
+	font-size: 20px;
+	line-height: 60px;
+	font-weight: 400;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.toplist_nav_item{
+	
+}
+
+.toplist_nav_link{
+    font-size: 15px;
+    display: block;
+    line-height: 22px;
+    padding: 8px 17px;
+    color: black;
+}
+
+.toplist_nav_link:hover{
+	color: #31c27c;
+}
+.toplist_nav_link_current{
+	background: #31c27c;
+	color: white;
+}
+
+.toplist_nav_link_current:hover{
+	background: #31c27c;
+	color: white;
+}
+
+
+.mod_toplist{
+	margin-left: 220px;
+}
+
+.toplist_hd{
+	line-height: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+.toplist_tit{
+	float: left;
+    font-weight: 400;
+    font-size: 24px;
+    margin: 0;
+    margin-right: 15px;
+    line-height: 64px;
+}
+
+.button_size{
+	height: 40px;
+	margin-right: 6px;
+	padding: 0 23px;
+	line-height: 39px;
+	   border-radius: 2px;
+    font-size: 14px;
+    min-width: 120px;
+}
+
+.button_current{
+	background: #31c27c;
+}
+
+.mod_songlist{
+	margin-bottom: 60px;
+}
+
+.songlist_header{
+
+	font-size: 14px;
+	padding-left: 122px;
+	padding-right: 100px;
+	height: 50px;
+    line-height: 50px;
+    background-color: #fbfbfd;
+    color: #999;
+    display: list-item;
+    list-style: none;
+}
+
+.songlist_header_name{
+	float: left;
+	width: 70%;
+}
+
+.songlist_header_author,.songlist_artist{
+	float: left;
+    padding-left: 20px;
+    width: 20%;
+}
+.songlist_header_time{
+	float: left;
+}
+.songlist_list{
+margin:0;
+}
+
+.songlist_list li{
+	list-style: none;
+	display: block;
+}
+
+.songlist_item{
+	padding-left: 82px;
+	padding-right: 100px;
+	height: 80px;
+}
+.songlist_album, .songlist_artist, .songlist_number, .songlist_songname, .songlist_time, .songlist_edit {
+    line-height: 80px;
+    height: 80px;
+    float: left;
+}
+
+.songlist_edit{
+	position: relative;
+	left: 0px;
+	top:30px;
+}
+.songlist_number{
+	line-height: 75px;
+	position: relative;
+    width: 50px;
+    top: 2px;
+    left: 0px;
+    text-align: left;
+    font-size: 24px;
+    color: #333;
+    float: left;
+    margin-left: 20px;
+}
+
+.songlist_number_top {
+    color: #ff4222;
+}
+
+.songlist_songname{
+	width: 70%;
+}
+.songlist_songname_txt{
+	float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 78%;
+    margin-right: 8px;
+}
+
+.songlist_list a{
+	color:black;
+}
+
+.songlist_list a:hover{
+	color:#31c27c;
+}
+
+.songlist_cover{
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 20px;
+    
+}
+
+.songlist_pic{
+	width: 70px;
+	height: 70px;
+}
+
+.songlist_time{
+	position: relative;
+	
+}

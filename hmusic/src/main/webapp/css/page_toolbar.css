@@ -1,0 +1,33 @@
+.mod_page_nav{
+    clear: both;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 0;
+}
+
+.page ,.prev ,.next {
+    text-decoration: none;
+    color: #a2a2a2;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+
+    font-size: 16px;
+    font-weight: 400;
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 5px;
+    width: 50px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.page a:hover,.prev a:hover,.next a:hover{
+    color: #fff;
+    background: #31c27c;
+}
+
+.active a{
+    background: #31c27c;
+    color:white;
+}

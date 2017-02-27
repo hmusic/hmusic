@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hmusic.dao.MusicDao">
+	
+	<resultMap type="Music" id="MusicMap">
+		  <id column="musicid" property="musicid" />
+    <result column="musicname" property="musicname" />
+    <result column="musicphoto" property="musicphoto" />
+    <result column="duration" property="duration" />
+    <result column="musicpath" property="musicpath" />
+    <result column="lyricspath" property="lyricspath" />
+    <result column="clickrate" property="clickrate" />
+    <result column="downloadrate" property="downloadrate" />
+    <result column="uploadtime" property="uploadtime" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+    musicid, musicname, musicphoto, duration, musicpath, lyricspath, clickrate, downloadrate, 
+    uploadtime
+  </sql>
+  
+	<insert id="add" parameterType="Music">
+		insert into music (musicid, musicname, musicphoto, 
+      duration, musicpath, lyricspath, 
+      clickrate, downloadrate, uploadtime
+      )
+    values (#{musicid,jdbcType=INTEGER}, #{musicname,jdbcType=VARCHAR}, #{musicphoto,jdbcType=VARCHAR}, 
+      #{duration,jdbcType=TIME}, #{musicpath,jdbcType=VARCHAR}, #{lyricspath,jdbcType=VARCHAR}, 
+      #{clickrate,jdbcType=INTEGER}, #{downloadrate,jdbcType=INTEGER}, #{uploadtime,jdbcType=TIMESTAMP}
+      )
+     </insert>
+	
+	<update id="update" parameterType="Music">
+		update music
+    <set>
+      <if test="musicname != null">
+        musicname = #{musicname},
+      </if>
+      <if test="musicphoto != null">
+        musicphoto = #{musicphoto},
+      </if>
+      <if test="duration != null">
+        duration = #{duration},
+      </if>
+      <if test="musicpath != null">
+        musicpath = #{musicpath},
+      </if>
+      <if test="lyricspath != null">
+        lyricspath = #{lyricspath},
+      </if>
+      <if test="clickrate != null">
+        clickrate = #{clickrate},
+      </if>
+      <if test="downloadrate != null">
+        downloadrate = #{downloadrate},
+      </if>
+      <if test="uploadtime != null">
+        uploadtime = #{uploadtime},
+      </if>
+    </set>
+    where musicid = #{musicid}
+	</update>
+	
+	
+	<delete id="deleteById" parameterType="Integer">
+		delete from music where musicid = #{id}
+	</delete>
+	
+	<select id="findById" parameterType="Integer" resultType="Music">
+		select * from music where musicid = #{id}
+	</select>
+	
+	
+	<select id="findAll" resultMap="MusicMap">
+		select * from music
+	</select>
+	<select id="findByMusicname" resultMap="MusicMap">
+		select * from music where musicname LIKE concat(concat('%',#{musicname}),'%') 
+	</select>
+	
+	
+</mapper>

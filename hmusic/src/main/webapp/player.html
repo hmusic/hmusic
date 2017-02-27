@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/player.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <title>秋意浓（原唱：张学友）</title>
+    <style type="text/css" rel="stylesheet">
+        .player_songlist__edit .songlist__edit input{
+            width:14px;
+            height: 14px;
+        }
+    </style>
+
+</head>
+<body>
+<h1 class="player_logo">
+    <a target="_blank" href="#"><img src="./img/logo.png" style="opacity: 0.6"></a>
+</h1>
+    <div class="player_login" style="">
+        <a class="player_login_link">登录</a>
+        <a class="player_resign__link">注册</a>
+    </div>
+    <div class="player">
+        <div class="player_hd"></div>
+        <!--播放器信息主体-->
+        <div class="player_bd">
+            <!--默认模式-->
+            <div class="player_full_box">
+                <!--歌曲工具栏-->
+                <div class="player_songlist_toolbar">
+                    <a class="mod_btn js_all_like">
+                        <i class="icon-heart-empty"></i>
+                        收藏
+                        <span class="mod_btn__border"></span>
+                    </a>
+                    <a class="mod_btn js_all_fav">
+                        <i class="icon-plus-sign-alt"></i>
+                        添加到
+                        <span class="mod_btn__border"></span>
+                    </a>
+                    <a class="mod_btn js_all_down">
+                        <i class="icon-download-alt"></i>
+                        下载
+                        <span class="mod_btn__border"></span>
+                    </a>
+                    <a class="mod_btn js_all_delete">
+                        <i class="icon-trash"></i>
+                        删除
+                        <span class="mod_btn__border"></span>
+                    </a>
+                    <a class="mod_btn js_all_deleted">
+                        <i class="icon-remove"></i>
+                        清空列表
+                        <span class="mod_btn__border"></span>
+                    </a>
+                </div>
+                <!--歌曲列表显示栏-->
+                <div class="player_songlist">
+                    <div class="sb_overview" style="height: 511px" >
+                        <div class="songlist player_songlist__edit">
+                            <i class="player_songlist__line"></i>
+                            <ul class="songlist_header">
+                                <li class="songlist__edit">
+                                    <input class="songlist__checkbox js_check_all" type="checkbox" checked/>
+                                </li>
+                                <li class="songlist__header_name">歌曲</li>
+                                <li class="songlist__header_author">歌手</li>
+                                <li class="songlist__header_time">时长</li>
+                            </ul>
+                            <i class="player_songlist__line"></i>
+                            <ul class="songlist_body">
+                                <li>
+                                    <div class="songlist__item songlist__item--playing">
+                                        <div class="songlist__edit songlist__edit--check">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友)
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">
+                                            <a href="#" class="singer_name">迪玛希</a>
+                                        </div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">5</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                <div class="songlist__item">
+                                    <div class="songlist__edit songlist__edit--check ">
+                                        <input class="songlist__checkbox" type="checkbox"/>
+                                    </div>
+                                    <div class="songlist__number">1</div>
+                                    <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                        <div class="mod_list_menu">
+                                            <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                <i class="list_menu__icon_play"></i>
+                                                <span class="icon_txt">播放</span>
+                                            </a>
+                                            <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                <i class="list_menu__icon_add"></i>
+                                                <span class="icon_txt">添加到歌单</span>
+                                            </a>
+                                            <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                <i class="list_menu__icon_down"></i>
+                                                <span class="icon_txt">下载</span>
+                                            </a>
+                                            <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                <i class="list_menu__icon_share"></i>
+                                                <span class="icon_txt">分享</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="songlist__artist">迪玛希</div>
+                                    <div class="songlist__time">05:57</div>
+                                    <div class="songlist__other"></div>
+                                    <a class="songlist__delete js_delete" title="删除">
+                                        <span class="icon_txt">删除</span>
+                                    </a>
+                                    <!--分割线-->
+                                </div>
+                            </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="songlist__item">
+                                        <div class="songlist__edit songlist__edit--check ">
+                                            <input class="songlist__checkbox" type="checkbox"/>
+                                        </div>
+                                        <div class="songlist__number">1</div>
+                                        <div class="songlist__songname">
+                                            <span class="songlist__songname_txt" title="秋意浓（live）（原唱：张学友）">
+                                                秋意浓（原唱：张学友）
+                                            </span>
+                                            <div class="mod_list_menu">
+                                                <a class="list_menu__item list_menu__play js_play" title="播放">
+                                                    <i class="list_menu__icon_play"></i>
+                                                    <span class="icon_txt">播放</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__add js_fav" title="添加到歌单">
+                                                    <i class="list_menu__icon_add"></i>
+                                                    <span class="icon_txt">添加到歌单</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__down js_down" title="下载">
+                                                    <i class="list_menu__icon_down"></i>
+                                                    <span class="icon_txt">下载</span>
+                                                </a>
+                                                <a class="list_menu__item list_menu__share js_share" title="分享">
+                                                    <i class="list_menu__icon_share"></i>
+                                                    <span class="icon_txt">分享</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="songlist__artist">迪玛希</div>
+                                        <div class="songlist__time">05:57</div>
+                                        <div class="songlist__other"></div>
+                                        <a class="songlist__delete js_delete" title="删除">
+                                            <span class="icon_txt">删除</span>
+                                        </a>
+                                        <!--分割线-->
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!--模拟滚动条S-->
+                    <div class="scroll_area sb vertical" style="display: none">
+                        <div class="scroll_bg sb_bg">
+                            <div class="scroll_bg_cont sb_bg_cont"></div>
+                        </div>
+                        <div class="scroll_bar sb_thumb" style="height: 0px">
+                            <div class="scroll_bar_cont sb_thumb_cont"style="height: 0px"></div>
+                        </div>
+                    </div>
+                    <!--模拟滚动条E-->
+                </div>
+                <!--歌曲信息展示栏-->
+                <div id="song_info" class="player_song_info">
+                    <!--歌曲基本信息-->
+                    <div class="song_info">
+                        <div id="song_img" class="song_info__cover">
+                            <img src="https://y.gtimg.cn/music/photo_new/T002R300x300M0000035hOHV0uUWA9.jpg?max_age=2592000" id="song_pic" alt class="song_info__pic">
+
+                        </div>
+                        <div id="song_name" class="song_info__name">
+                            歌曲名：
+                            <a href="#" title="歌曲名" target="_blank">
+                                秋意浓
+                            </a>
+                        </div>
+                        <div id="song_singer" class="song_info__singer">
+                            歌手名：
+                            <a href="#" title="歌手名" class="js_singer" target="_blank">
+                                迪玛希
+                            </a>
+                        </div>
+                    </div>
+                    <!--歌词-->
+                    <div class="song_info__lyric">
+                        <!--歌词显示box-->
+                        <div class="song_info__lyric_box">
+                            <!--控制歌词在显示box中滚动显示-->
+                            <div id="qrc_ctn" class="song_info__lyric_inner qrc_ctn" data-mod="1">
+                                <!--歌词主体-->
+                                <p data-id="line_null">&nbsp;</p>
+                                <p data-id="line_0">秋意浓 - 迪玛希Dimash</p>
+                                <p data-id="line_1">词：姚若龙</p>
+                                <p data-id="line_2" class="on">曲：玉置浩二</p>
+                                <p data-id="line_3">编曲：Samal Ermakhanov</p>
+                                <p data-id="line_4">制作人：孔潇一</p>
+                                <p data-id="line_5" class="">乐队长笛：Charlie</p>
+                                <p data-id="line_6" class="">秋意浓</p>
+                                <p data-id="line_7" class="">离人心上秋意浓</p>
+                                <p data-id="line_8" class="">一杯酒</p>
+                                <p data-id="line_9" class="">情绪万种</p>
+                                <p data-id="line_10" class="">离别多</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--纯净模式-->
+            <div class="player_simp_box js_simp_box" style="display: none">
+                <div class="player_only_lyric js_lyric_box">
+                    <!--控制only_lyric__inner来做滚动-->
+                    <div class="only_lyric__inner qrc_ctn" data-mod="2">
+                        <!--歌词部分-->
+                        <p data-id="line_null">&nbsp;</p>
+                        <p data-id="line_0">秋意浓 - 迪玛希Dimash</p>
+                        <p data-id="line_1">词：姚若龙</p>
+                        <p data-id="line_2" class="on">曲：玉置浩二</p>
+                        <p data-id="line_3">编曲：Samal Ermakhanov</p>
+                        <p data-id="line_4">制作人：孔潇一</p>
+                        <p data-id="line_5" class="">乐队长笛：Charlie</p>
+                        <p data-id="line_6" class="">秋意浓</p>
+                        <p data-id="line_7" class="">离人心上秋意浓</p>
+                        <p data-id="line_8" class="">一杯酒</p>
+                        <p data-id="line_9" class="">情绪万种</p>
+                        <p data-id="line_10" class="">离别多</p>
+                    </div>
+                </div>
+                <a class="btn_lang btn_lang--select js_trans_btn" style="display: none">
+                    <i class="icon_txt">开启音译歌词</i>
+                </a>
+            </div>
+        </div>
+        <!--播放器控制器-->
+        <div id="opbanner" class="player__ft">
+            <!--上一首-->
+            <a class="btn_big_prev" title="alt+←">
+                <span class="icon_txt">上一首</span>
+            </a>
+            <!--暂停/播放-->
+            <a class="btn_big_play" id="btnplay" title="空格">
+                <span class="icon_txt">播放</span>
+            </a>
+            <!--下一首-->
+            <a class="btn_big_next" title="atk+→">
+                <span class="icon_txt">下一首</span>
+            </a>
+            <div class="player_music">
+                <div id="sim_song_info" class="player_music__info">
+                    <a herf="#" class="js_song" title="秋意浓（live）（原唱：张学友）">秋意浓（live）（原唱：张学友）</a>
+                      -
+                    <a herf="#" class="js_singer" title="迪玛希">迪玛希</a>
+                </div>
+                <div id="time_show" class="player_music__time">
+
+                </div>
+                <div id="progress" class="player_progress">
+                    <div id="spanplayer_bgbar" class="player_progress__inner" title="提示信息">
+                        <div id="downloadbar" class="player_progress__load"></div>
+                        <div id="spanplaybar" class="player_progress__play">
+                            <!--小圆点（播放的位置）-->
+                            <i class="player_progress__dot" id="spanprogress_op"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--播放模式-->
+            <div>
+                <a id="play_mode" class="btn_big_style_list" title="" href="">
+                    <span class="icon_txt">列表循环[0]</span>
+                </a>
+            </div>
+            <!--喜欢收藏按钮-->
+            <a class="btn_big_like" title="喜欢[V]">
+                <span class="icon_txt">喜欢[V]</span>
+            </a>
+            <!--下载按钮-->
+            <a class="btn_big_down" title="下载[D]">
+                <span class="icon_txt">下载[D]</span>
+            </a>
+            <!--纯净模式开关-->
+            <a id="only" class="btn_big_only" title="打开纯净模式[C]" href="javascript:;">
+                <span class="icon_txt">打开纯净模式[C]</span>
+            </a>
+            <!--声音控制器-->
+            <div id="voice" class="player_progress player_voice">
+                <a id="spanmute" class="btn_big_voice" title="关闭声音[M]" href="javascript:;">
+                    <span class="icon_txt">关闭声音[M]</span>
+                </a>
+                <div id="spanvolume" class="player_progress__inner" title="调节音量">
+                    <div id="spanvolumebar" class="player_progress__play" style="width: 75%">
+                        <!--小圆点-->
+                        <i class="player_progress__dot" id="spanvolumeop"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg_player_mask"></div>
+    <div id="backImg" class="bg_player"></div>
+    <audio id="media" height="0" width="0" ></audio>
+
+<script type="text/javascript" src="./js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="./js/bootstrap.js" ></script>
+<script type="text/javascript" src="./js/player.js"></script>
+
+</body>
+
+</html>

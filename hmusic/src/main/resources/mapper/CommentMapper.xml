@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hmusic.dao.CommentDao">
+	<insert id="addComment" parameterType="Comment">
+		insert into comment(userid,musicid,content,commenttime,likenum) values(#{userid},#{musicid},#{content},#{commenttime},#{likenum})
+	</insert>
+	
+	<update id="updateLikenum">
+		update comment set likenum=#{likenum} where commentid = #{commentid}
+	</update>
+	
+	<delete id="deleteComment" parameterType="Integer">
+		delete from comment where commentid = #{commentid}
+	</delete>
+	
+	<select id="findByMusicid" parameterType="Integer" resultMap="commentMap">
+		select * from comment where songlistid = #{songlistid}
+	</select>
+	
+	<resultMap type="Comment" id="commentMap">
+		<id column="commentid" property="commentid"/>
+		<result column="userid" property="userid"/>
+		<result column="musicid" property="musicid"/>
+		<result column="content" property="content"/>
+		<result column="commenttime" property="commenttime"/>
+		<result column="likenum" property="likenum"/>
+	</resultMap>
+			
+</mapper>
