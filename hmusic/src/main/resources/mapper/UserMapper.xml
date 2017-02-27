@@ -6,7 +6,11 @@
 	</insert>
 	
 	<update id="update" parameterType="User">
-		update user set userphoto=#{userphoto},email=#{email},sex=#{sex},telephone=#{telephone} where userid = #{userid}
+		update user set userphoto=#{userphoto},email=#{email},sex=#{sex},telephone=#{telephone} where username = #{username}
+	</update>
+	
+	<update id="updatepassword" parameterType="User">
+		update user set userpassword=#{userpassword} where username = #{username}
 	</update>
 	
 	<delete id="delete" parameterType="Integer">

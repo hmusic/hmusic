@@ -10,6 +10,8 @@ public interface UserService {
 	
 	public void update(User user);
 	
+	public void updatepassword(User user);
+	
 	public void delete(Integer userid);
 	
 	public User findByID(Integer userid);

@@ -23,7 +23,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public void update(User user) {
+		System.out.println("DAO层："+user.getSex());
 		userDao.update(user);
+	}
+	
+	public void updatepassword(User user)
+	{
+		userDao.updatepassword(user);
 	}
 
 	public void delete(Integer userid) {
@@ -43,7 +49,6 @@ public class UserServiceImpl implements UserService {
 	public List<User> findAll() {
 		return userDao.findAll();
 	}
-
 
 	public User login(String username, String userpassword) {
 		// 输入的账号，输入的密码

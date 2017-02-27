@@ -46,7 +46,7 @@
 				</h3>
 			</div>
 
-			<form id="update_form" action="/hmusic/edituserinfo.do" method="post">
+			<form id="update_form" action="/hmusic/edituserinfo.do" method="post" enctype="multipart/form-data">
 				<div class="n-base">
 					<div class="frm m-frm">
 
@@ -86,14 +86,13 @@
 					</div>
 
 					<div class="avatar">
-						<img src="img/user_photo.jpg" id="user_photo">
+						<img src="${user.userphoto}" id="user_photo">
 						<label class="button-change-avatar text-center mt-3 width-full position-relative">
 							上传照片
-							<input type="file" class="manual-file-chooser file-choose" id="file_upload" accept="*.jpg,*.png"  >
+							<input type="file" class="manual-file-chooser file-choose" accept="*.jpg,*.png" name="userphotofile">
 						</label>
 						
-					</div>
-
+						</div>
 
 				</div>
 			</form>

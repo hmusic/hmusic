@@ -22,6 +22,10 @@ public interface UserDao {
      * @param record
      */
 	void update(User user);
+	/**
+	 * 修改密码
+	 */
+	void updatepassword(User user);
 	 /**
      * 此方法对应于数据库中的表 ,user
      * 根据主键删除数据库的记录
