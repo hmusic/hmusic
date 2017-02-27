@@ -17,9 +17,23 @@ import com.hmusic.service.MusicService;
 @RequestMapping(value="/admin")
 public class AdminController {	
 
-	
 	@RequestMapping(value = "/")
-	public ModelAndView musicList(){		
+	public ModelAndView index(){		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/login");		
+		return mv;
+	}
+	
+	@RequestMapping(value = "/login")
+	public ModelAndView login(){	
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/index");		
+		return mv;
+	}
+	
+	@RequestMapping(value = "/homepage")
+	public ModelAndView homepage(){		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("admin/index");		
 		return mv;
