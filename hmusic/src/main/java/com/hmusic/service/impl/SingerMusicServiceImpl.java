@@ -39,6 +39,23 @@ public class SingerMusicServiceImpl implements SingerMusicService {
 		singerMusicDao.add(singermusic);
 	}
 
+	@Override
+	public void updateSingerMusic(String singername, String musicname){
+		// TODO Auto-generated method stub
+		Singer singer = singerDao.findSingerByName(singername);
+		Music music = musicDao.findByMusicName(musicname);
+		
+		SingerMusic singermusic = new SingerMusic();
+		if(music.getMusicid() != null)
+			singermusic.setMusicid(music.getMusicid());
+		if(singer.getSingerid() != null)
+			singermusic.setSingerid(singer.getSingerid());
+		
+		singerMusicDao.update(singermusic);
+		
+		
+	}
+
 
 
 }

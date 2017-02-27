@@ -13,6 +13,9 @@
 		delete from singer_music where songlistid = #{singerid}
 	</delete>
 	
+	<update id="update" parameterType="SingerMusic">
+		update singer_music set singerid=#{singerid} where musicid = #{musicid}
+	</update>
 			
 	<select id="findByMusicid" parameterType="Integer" resultType="SingerMusic">
 		select * from singer_music where musicid = #{musicid}

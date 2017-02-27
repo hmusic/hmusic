@@ -2,6 +2,7 @@ package com.hmusic.service;
 
 import java.util.List;
 
+import com.hmusic.entity.Music;
 import com.hmusic.entity.MusicFull;
 import com.hmusic.entity.Songlist;
 
@@ -20,6 +21,9 @@ public interface MusicFullService {
 	 * @return
 	 */
 	public MusicFull getMusicFullByMusicid(Integer musicid);
+	
+	public MusicFull getMusicFullByMusic(Music music);
+	
 	/**
 	 * 根据歌曲类别查询 该类型所有歌曲
 	 * @param musictypeid 歌曲类别id
@@ -80,4 +84,5 @@ public interface MusicFullService {
 	 * @param songlist 歌单对象
 	 */
 	public void addSonglistByUserid(Integer userid,Songlist songlist);
+		
 }

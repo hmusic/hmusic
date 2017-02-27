@@ -13,7 +13,7 @@
 		update music_musictype set musictypeid=#{musictypeid} where musicid = #{musicid}
 	</update>
 	
-	<update id="update">
+	<update id="update" parameterType="MusicMusicType">
 		update music_musictype set musictypeid=#{musictypeid} where musicid = #{musicid}
 	</update>
 	

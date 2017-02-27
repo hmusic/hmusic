@@ -24,10 +24,6 @@
 <base href="${ctx}">
 <script src="${ctx}/admin/js/jquery.min.js"></script>
 
-<!-- 下面JS为页面初始化异步加载数据，
-如果采用easyui ,那么返回的data数据就可以直接绑定到表格上，
-下面才的的拼接方式上无任何框架的方式 -->
-<!-- -->
 <script type="text/javascript">
 
 </script>
@@ -62,12 +58,12 @@
 			<tr>
 				<th width="120">歌曲ID</th>
 				<th>歌曲名</th>
-				<th>歌曲封面路径</th>
+				<!--  <th>歌曲封面路径</th>-->
 				<th>歌曲时长</th>
 				<th>歌手</th>
 				<th>歌曲类型</th>				
-				<th>歌曲路径</th>
-				<th>歌词路径</th>
+			<!-- 	<th>歌曲路径</th>
+				<th>歌词路径</th>-->
 				<th>点击量</th>
 				<th>下载量</th>
 				<!-- <th width="25%">歌曲类别</th> -->
@@ -75,25 +71,25 @@
 				<th>操作</th>
 			</tr>
 			<%----%>
-			<c:forEach items="${musicList}" var="music">
+			<c:forEach items="${musicFullList}" var="musicfull">
 				<tr>
-					<td><input type="checkbox" name="id[]" value="1" />${music.musicid}</td>
-					<td>${music.musicname}</td>
-					<td>${music.musicphoto}</td>
-					<td>${music.duration}</td>
-					<td></td>
-					<td></td>
-					<td>${music.musicpath}</td>
-					<td>${music.lyricspath}</td>
-					<td>${music.clickrate}</td>
-					<td>${music.downloadrate}</td>					
-					<td><fmt:formatDate value="${music.uploadtime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+					<td><input type="checkbox" name="id[]" value="1" />${musicfull.music.musicid}</td>
+					<td>${musicfull.music.musicname}</td>
+				<!-- 	<td>${musicfull.music.musicphoto}</td>-->	
+					<td>${musicfull.music.duration}</td>
+					<td>${musicfull.singer.singername}</td>
+					<td>${musicfull.musictype.musictypename}</td>
+			<!-- 	<td>${musicfull.music.musicpath}</td>
+					<td>${musicfull.music.lyricspath}</td> -->	
+					<td>${musicfull.music.clickrate}</td>
+					<td>${musicfull.music.downloadrate}</td>					
+					<td><fmt:formatDate value="${musicfull.music.uploadtime}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 					<td>
 						<div class="button-group">
 							<a class="button border-main"
-								href="${ctx}/music/editLoad?musicid=${music.musicid}"><span
+								href="${ctx}/music/editLoad?musicid=${musicfull.music.musicid}"><span
 								class="icon-edit"></span> 修改</a> <a class="button border-red"
-								href="javascript:void(0)" onclick="return del(${music.musicid})"><span
+								href="javascript:void(0)" onclick="return del(${musicfull.music.musicid})"><span
 								class="icon-trash-o"></span> 删除</a>
 						</div>
 					</td>

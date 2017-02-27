@@ -1,6 +1,7 @@
 package com.hmusic.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -143,7 +144,7 @@ public class MusicFullServiceImpl implements MusicFullService {
 
 	}
 	@Transactional(propagation=Propagation.NOT_SUPPORTED,readOnly=true)
-	private MusicFull getMusicFullByMusic(Music music) {
+	public MusicFull getMusicFullByMusic(Music music) {
 		Integer musicid = music.getMusicid();
 		System.out.println("MusicID:"+musicid);
 		Integer singerid = singerMusicDao.findByMusicid(musicid).getSingerid();
@@ -169,5 +170,7 @@ public class MusicFullServiceImpl implements MusicFullService {
 		return musicFullList;
 	}
 
+	
+	
 
 }

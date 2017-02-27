@@ -46,6 +46,18 @@ public class MusicMusicTypeServiceImpl implements MusicMusicTypeService{
 		musicMusicTypeDao.add(musicMusicType);
 	}
 
+	@Override
+	public void updateMusicAndType(String musicname, String musictypename) {
+		// TODO Auto-generated method stub
+		Music music = musicDao.findByMusicName(musicname);
+		
+		MusicType musicType = musicTypeDao.findByTypeName(musictypename);
+		
+		if (music.getMusicid() != null && musicType.getMusictypeid() != null) {
+			musicMusicTypeDao.update(music.getMusicid(), musicType.getMusictypeid());
+		}
+	}
+
 	
 	
 	

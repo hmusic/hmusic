@@ -17,7 +17,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hmusic.entity.Music;
+import com.hmusic.entity.MusicFull;
 import com.hmusic.entity.MusicType;
+import com.hmusic.entity.Singer;
 import com.hmusic.service.MusicFullService;
 import com.hmusic.service.MusicMusicTypeService;
 import com.hmusic.service.MusicService;
@@ -56,9 +58,12 @@ public class MusicController {
 	@RequestMapping(value = "/musicList")
 	public ModelAndView musicList(){
 		List<Music> musicList = musicService.findAll();
-		
+		List<MusicFull> musicFullList = new ArrayList<MusicFull>();
+		for (Music music : musicList) {
+			musicFullList.add(musicFullService.getMusicFullByMusic(music));
+		}
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("musicList", musicList);
+		mv.addObject("musicFullList", musicFullList);
 		mv.setViewName("admin/musicList");
 		
 		return mv;
@@ -144,14 +149,15 @@ public class MusicController {
      */
 	@RequestMapping(value = "/editLoad")
 	public ModelAndView editLoad(@RequestParam(value = "musicid") Integer musicid){
-		Music music = musicService.findById(musicid);
+		MusicFull musicfull = musicFullService.getMusicFullByMusicid(musicid);
 		
 		List<MusicType> musicTypeList = new ArrayList<MusicType>();
-		musicTypeList = musicTypeService.findAll();		
-		
+		musicTypeList = musicTypeService.findAll();
+				
 		ModelAndView mv = new ModelAndView();
+		
+		mv.addObject("musicfull",musicfull);
 		mv.addObject("musictypelist",musicTypeList);
-		mv.addObject("music", music);
 		mv.setViewName("admin/editMusic");
 		return mv;
 	}
@@ -161,10 +167,15 @@ public class MusicController {
      * @return
      */
 	@RequestMapping(value = "/edit",method = RequestMethod.POST)
-	public String edit(Music music){
+	public String edit(HttpServletRequest request){
+				
+		String musicname = request.getParameter("musicname");
+		String singername = request.getParameter("singername");
+		String musictypename = request.getParameter("musictypename");
 		
-		music.setUploadtime(new Date(System.currentTimeMillis()));
-		musicService.update(music);
+		singerMusicService.updateSingerMusic(singername,musicname);
+		musicMusicTypeService.updateMusicAndType(musicname,musictypename);
+		
 		return "redirect:/music/musicList";
 	}
 	/**

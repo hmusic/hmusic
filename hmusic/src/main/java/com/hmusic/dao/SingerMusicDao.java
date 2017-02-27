@@ -34,4 +34,6 @@ public interface SingerMusicDao {
 	 * @return
 	 */
 	public List<SingerMusic> findBySingerid(Integer singerid);
+	
+	public void update(SingerMusic singermusic);
 }

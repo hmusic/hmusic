@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="panel admin-panel">
-  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>增加歌曲</strong></div>
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改歌曲</strong></div>
   <div class="body-content">
     <form method="post" class="form-x" action="${ctx}/music/edit">  
       <div class="form-group">
@@ -25,7 +25,7 @@
           <label>歌曲名：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" value="${music.musicname }" name="title" data-validate="required:请输入标题" />
+          <input type="text" class="input w50" value="${musicfull.music.musicname }" name="musicname" data-validate="required:请输入歌曲名" />
           <div class="tips"></div>
         </div>
       </div>
@@ -34,7 +34,7 @@
           <label>封面路径：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" disabled="disabled" value="${music.musicphoto }" name="title" data-validate="required:请输入标题" />
+          <input type="text" class="input w50" disabled="disabled" value="${musicfull.music.musicphoto }" name="musicphoto" data-validate="required:请输入封面" />
           <div class="tips"></div>
         </div>
       </div>
@@ -44,7 +44,7 @@
           <label>歌曲时长：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" disabled="disabled" value="${music.duration }" name="title" data-validate="required:请输入标题" />
+          <input type="text" class="input w50" disabled="disabled" value="${musicfull.music.duration }" name="duration" data-validate="required:请输入标题" />
           <div class="tips"></div>
         </div>
       </div>
@@ -54,7 +54,7 @@
           <label>歌手：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" value="${singer.singername }" name="title" data-validate="required:请输入标题" />
+          <input type="text" class="input w50" value="${musicfull.singer.singername }" name="singername" data-validate="required:请输入歌手名" />
           <div class="tips"></div>
         </div>
       </div>
@@ -64,7 +64,7 @@
           </div>
           <div class="field">
              <select name="musictypename" class="input w50">
-              <option value="">当前分类：${musictype.musictypename}</option>
+              <option value="">当前分类：${musicfull.musictype.musictypename}</option>
               <c:forEach items="${musictypelist}" var="type">
               <option value="${type.musictypename}">${type.musictypename}</option>
               </c:forEach>
@@ -78,7 +78,7 @@
           <label>歌曲路径：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" disabled="disabled" value="${music.musicpath }" name="title" data-validate="required:请输入标题" />
+          <input type="text" class="input w50" disabled="disabled" value="${musicfull.music.musicpath }" name="musicpath" data-validate="required:请输入标题" />
           <div class="tips"></div>
         </div>
       </div>
@@ -87,7 +87,7 @@
           <label>歌词路径：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" disabled="disabled" value="${music.lyricspath }" name="title" data-validate="required:请输入标题" />
+          <input type="text" class="input w50" disabled="disabled" value="${musicfull.music.lyricspath }" name="lyricspath" data-validate="required:请输入标题" />
           <div class="tips"></div>
         </div>
       </div>
@@ -96,7 +96,7 @@
           <label>点击量：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" disabled="disabled" name="views" value="${music.clickrate }" data-validate="member:只能为数字"  />
+          <input type="text" class="input w50" disabled="disabled" name="clickrate" value="${musicfull.music.clickrate }" data-validate="member:只能为数字"  />
           <div class="tips"></div>
         </div>
       </div>
@@ -105,7 +105,7 @@
           <label>下载量：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" disabled="disabled" name="views" value="${music.downloadrate }" data-validate="member:只能为数字"  />
+          <input type="text" class="input w50" disabled="disabled" name="downloadrate" value="${musicfull.music.downloadrate }" data-validate="member:只能为数字"  />
           <div class="tips"></div>
         </div>
       </div>
