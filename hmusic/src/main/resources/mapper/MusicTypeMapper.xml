@@ -17,6 +17,10 @@
 		select * from musictype where musictypeid = #{musictypeid}
 	</select>
 	
+	<select id="findByTypeName" parameterType="String" resultType="MusicType">
+		select * from musictype where musictypename = #{musictypename}
+	</select>
+	
 	<select id="findAll" resultMap="musicTypeMap">
 		select * from musictype
 	</select>

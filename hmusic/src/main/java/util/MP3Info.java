@@ -80,12 +80,12 @@ public class MP3Info {
 		}
 	}
 
-	public static void main(String[] args) {
-		MP3Info m = new MP3Info("E:\\心随乐动\\赵雷 - 理想 (Live).mp3");
-		//E:\\心随乐动\\赵雷 - 理想 (Live).mp3薛之谦 - 绅士 (Live).mp3 迪玛希Dimash - 秋意浓 (Live) (原唱：张学友).mp3
-		m.getDuration();
-		m.getLength();
-		m.getMusicName();
-		m.getSingerName();
-	}
+//	public static void main(String[] args) {
+//		MP3Info m = new MP3Info("E:\\心随乐动\\赵雷 - 理想 (Live).mp3");
+//		//E:\\心随乐动\\赵雷 - 理想 (Live).mp3薛之谦 - 绅士 (Live).mp3 迪玛希Dimash - 秋意浓 (Live) (原唱：张学友).mp3
+//		m.getDuration();
+//		m.getLength();
+//		m.getMusicName();
+//		m.getSingerName();
+//	}
 }

@@ -33,4 +33,6 @@ public interface MusicTypeDao {
 	 * @return
 	 */
 	public MusicType findById(Integer musictypeid);
+	
+	public MusicType findByTypeName(String musictypename);
 }

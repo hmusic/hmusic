@@ -18,8 +18,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.hmusic.entity.Music;
 import com.hmusic.entity.MusicType;
+import com.hmusic.service.MusicMusicTypeService;
 import com.hmusic.service.MusicService;
 import com.hmusic.service.MusicTypeService;
+import com.hmusic.service.SingerMusicService;
 
 import constants.Config;
 
@@ -32,6 +34,12 @@ public class MusicController {
 	
 	@Autowired
 	private MusicTypeService musicTypeService;
+	
+	@Autowired
+	private MusicMusicTypeService musicMusicTypeService;
+	
+	@Autowired
+	private SingerMusicService singerMusicService;
 	
 	/**
      * 歌曲信息列表
@@ -46,18 +54,7 @@ public class MusicController {
 		
 		return mv;
 	}
-	/**
-     * 歌曲信息列表   页面异步加载
-     * @return
-     * @ResponseBody 注解的作用是将目标类型数据转换成json格式
-     * 另外页面需要加入jquery js
-     */
-	/*@RequestMapping(value = "/list")
-	public @ResponseBody List<music> list(){
-		List<music> musicList = musicService.findAll();
-		return musicList;
-	}
-	*/
+	
 	
 	/**
      * 跳转到添加信息视图
@@ -86,25 +83,49 @@ public class MusicController {
 			@RequestParam(value = "musicphoto", required = false) MultipartFile musicphotofile,
 			@RequestParam(value = "lyricspath", required = false) MultipartFile lyricsfile,
 			HttpServletRequest request){
-//		@RequestParam(value = "musicname") String musicname,
-//		@RequestParam(value = "singername") String singername,
-//		@RequestParam(value = "musictypename") String musictypename,
+		
 		System.out.println(request.getParameter("musicname")+", "
 				+request.getParameter("singername")+", "+request.getParameter("musictypename"));  
-//		System.out.println(musicname+", "+singername+", "+musictypename);  
+		String musicname = request.getParameter("musicname");
+		String singername = request.getParameter("singername");
+		String musictypename = request.getParameter("musictypename");
+		
+//		歌曲文件名  歌曲头像名 歌词文件名
         String musicpath = musicfile.getOriginalFilename(); 
+        String musicphotopath = musicphotofile.getOriginalFilename(); 
+        String lyricspath = lyricsfile.getOriginalFilename(); 
+        
         System.out.println(musicpath);  
+        //要存储的文件名，File(目标文件名，当前文件名)
         File musictargetFile = new File(Config.musicpath, musicpath);  
+        File phototargetFile = new File(Config.musicphotopath, musicphotopath); 
+        File lyricstargetFile = new File(Config.lyricspath, lyricspath); 
+        
         if(!musictargetFile.exists()){  
         	musictargetFile.mkdirs();  
+        } 
+        if(!phototargetFile.exists()){  
+        	phototargetFile.mkdirs();  
+        }  
+        if(!lyricstargetFile.exists()){  
+        	lyricstargetFile.mkdirs();  
         }  
   
         //保存  
         try {  
         	musicfile.transferTo(musictargetFile);  
+        	musicphotofile.transferTo(phototargetFile);
+        	lyricsfile.transferTo(lyricstargetFile);
         } catch (Exception e) {  
             e.printStackTrace();  
         }  
+        
+		musicService.upload(musicname,musicpath,musicphotopath,lyricspath);
+		
+		singerMusicService.addSingerMusic(singername,musicname);
+		musicMusicTypeService.addMusicAndType(musicname,musictypename);
+        
+       
 		return "redirect:/music/musicList";
 	}
 	/**
@@ -115,7 +136,12 @@ public class MusicController {
 	@RequestMapping(value = "/editLoad")
 	public ModelAndView editLoad(@RequestParam(value = "musicid") Integer musicid){
 		Music music = musicService.findById(musicid);
+		
+		List<MusicType> musicTypeList = new ArrayList<MusicType>();
+		musicTypeList = musicTypeService.findAll();		
+		
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("musictypelist",musicTypeList);
 		mv.addObject("music", music);
 		mv.setViewName("admin/editMusic");
 		return mv;
@@ -127,8 +153,7 @@ public class MusicController {
      */
 	@RequestMapping(value = "/edit",method = RequestMethod.POST)
 	public String edit(Music music){
-		System.out.println("musicId:"+music.getMusicid());
-		System.out.println("musicDownloadrate:"+music.getDownloadrate());
+		
 		music.setUploadtime(new Date(System.currentTimeMillis()));
 		musicService.update(music);
 		return "redirect:/music/musicList";

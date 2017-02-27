@@ -74,9 +74,13 @@
 	<select id="findAll" resultMap="MusicMap">
 		select * from music
 	</select>
+	
 	<select id="findByMusicname" resultMap="MusicMap">
 		select * from music where musicname LIKE concat(concat('%',#{musicname}),'%') 
 	</select>
 	
+	<select id="findByMusicName" resultMap="MusicMap">
+		select * from music where musicname = #{musicname} 
+	</select>
 	
 </mapper>

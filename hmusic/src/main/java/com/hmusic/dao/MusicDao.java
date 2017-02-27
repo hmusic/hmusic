@@ -50,4 +50,6 @@ public interface MusicDao {
 	 */
 	List<Music> findByMusicname(String name);
 	
+	Music findByMusicName(String name);
+	
 }

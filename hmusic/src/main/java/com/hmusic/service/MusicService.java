@@ -15,4 +15,6 @@ public interface MusicService {
 	Music findById(Integer id);
 	
 	List<Music> findAll();
+	
+	void upload(String musicname, String musicpath, String musicphotopath, String lyricspath);
 }
