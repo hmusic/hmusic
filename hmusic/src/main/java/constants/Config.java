@@ -2,12 +2,12 @@ package constants;
 
 public class Config {
 
-	public static String musicpath = "E://hmusicfs//music";
+	public static String musicpath = "upload/musicfiles/";
 	
-	public static String musicphotopath = "E://hmusicfs//musicphoto";
+	public static String musicphotopath = "upload/musicphoto/";
 	
-	public static String lyricspath = "E://hmusicfs//lyrics";
-	
+	public static String lyricspath = "upload/lyricsfiles/";
+
 	public static String userphotopath = "upload/userphoto/";
 	
 	
