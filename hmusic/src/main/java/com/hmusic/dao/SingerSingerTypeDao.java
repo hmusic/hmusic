@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.hmusic.entity.SingerSingerType;
 
-
-
 @Repository("singerSingerTypeDao")
 public interface SingerSingerTypeDao {
 
@@ -60,4 +58,6 @@ public interface SingerSingerTypeDao {
 	 * @return
 	 */
 	public List<SingerSingerType> findBySingerTypeId(Integer singertypeid);
+	
+	
 }

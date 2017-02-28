@@ -32,5 +32,7 @@ public interface SingerService {
 	public Singer findSingerByName(String singername);
 
 	public void upload(String singername, String sex, String introduction, String singerphotopath);
+
+	public void update(Integer singerid, String singername, String sex, String introduction, String singerphotopath);
 	
 }

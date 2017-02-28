@@ -19,13 +19,25 @@
 <div class="panel admin-panel">
   <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>修改歌曲</strong></div>
   <div class="body-content">
-    <form method="post" class="form-x" action="${ctx}/singer/edit">  
+    <form method="post" class="form-x" enctype="multipart/form-data" action="${ctx}/singer/edit">  
+      
+      <div class="form-group">
+        <div class="label">
+          <label>歌手ID：</label>
+        </div>
+        <div class="field">
+         <label  style="line-height:33px;">${singer.singerid }</label>
+         <input type="text" hidden="true" name="singerid" value="${singer.singerid }"/>
+          <div class="tips"></div>
+        </div>
+      </div>
+      
       <div class="form-group">
         <div class="label">
           <label>歌手姓名：</label>
         </div>
         <div class="field">
-          <input type="text" class="input w50" value="" name="singername" data-validate="required:请输入标题" />
+          <input type="text" class="input w50" value="${singer.singername }" name="singername" data-validate="required:请输入标题" />
           <div class="tips"></div>
         </div>
       </div>
@@ -34,9 +46,11 @@
         <div class="label">
           <label>歌手性别：</label>
         </div>
-        <div class="field">
-         <input type="radio" name="sex" value="男" checked="checked" />男
-		 <input type="radio" name="sex" value="女" />女 
+        <div class="field">         
+        <label style="line-height:33px;" for="male">男</label> 
+        <input type="radio" name="sex" id="male" value="男" <c:if test="${singer.sex=='男'}"> checked='checked'</c:if> /> 
+        <label style="line-height:33px;" for="female">女</label> 
+        <input type="radio" name="sex" id="female" value="女" <c:if test="${singer.sex=='女'}">checked='checked'</c:if>/>  
           <div class="tips"></div>
         </div>
       </div>
@@ -46,7 +60,9 @@
           <label>歌手介绍：</label>
         </div>
         <div class="field">
-          <textarea name="introduction"></textarea>
+          <textarea name="introduction" class="input" style="height:250px; border:1px solid #ddd;">
+          ${singer.introduction }
+          </textarea>
           <div class="tips"></div>
         </div>
       </div>
@@ -56,6 +72,7 @@
           <label>歌手图片：</label>
         </div>
         <div class="field">
+        <img alt="" src="${singer.singerphoto }">
         <input type="file" name="singerphoto" class="upload"/>           
         </div>
       </div>   
@@ -68,8 +85,8 @@
           </div>
           <div class="field">
             <select name="singertypename" class="input w50">
-              <option value="">请选择分类</option>
-              <c:forEach items="${singertypelist}" var="type">
+              <option value="${singertype.singertypename }">当前分类：${singertype.singertypename }</option>
+              <c:forEach items="${singertypeList}" var="type">
               <option value="${type.singertypename}">${type.singertypename}</option>
               </c:forEach>
             </select>

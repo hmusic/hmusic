@@ -2,21 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hmusic.dao.SingerTypeDao">
 	<insert id="addSingerType" parameterType="SingerType">
-		insert into SingerType(singerTypeName) values(#{singerTypeName})
+		insert into singertype(singertypename) values(#{singertypename})
 	</insert>
 	
 	<update id="updateSingerType" parameterType="SingerType">
-		update SingerType set singerTypeName = #{singerTypeName},
-    where singerTypeId = #{id}
+		update singertype set singertypename = #{singertypename},
+    where singertypeid = #{id}
 	</update>
 	
 	
 	<delete id="deleteSingerType" parameterType="Integer">
-		delete from SingerType where singerTypeId = #{id}
+		delete from singertype where singertypeid = #{id}
 	</delete>
 	
 	<select id="findSingerTypeByID" parameterType="Integer" resultType="SingerType">
-		select * from SingerType where singerTypeId = #{id}
+		select * from singertype where singertypeid = #{id}
+	</select>
+	
+	<select id="findSingerTypeByName" parameterType="String" resultType="SingerType">
+		select * from singertype where singertypename = #{singertypename}
 	</select>
 	
 	<resultMap type="SingerType" id="SingerTypeMap">
@@ -26,7 +30,7 @@
 	</resultMap>
 	
 	<select id="findAllSingerType" resultMap="SingerTypeMap">
-		select * from SingerType
+		select * from singertype
 	</select>
 	
 </mapper>

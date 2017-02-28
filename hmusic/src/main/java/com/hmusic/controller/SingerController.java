@@ -19,6 +19,7 @@ import com.hmusic.entity.Music;
 import com.hmusic.entity.MusicFull;
 import com.hmusic.entity.MusicType;
 import com.hmusic.entity.Singer;
+import com.hmusic.entity.SingerSingerType;
 import com.hmusic.entity.SingerType;
 import com.hmusic.service.MusicFullService;
 import com.hmusic.service.SingerService;
@@ -74,6 +75,7 @@ public class SingerController {
 		String sex = request.getParameter("sex");
 		String introduction = request.getParameter("introduction");
 		String singertypename = request.getParameter("singertypename");
+		System.out.println(singertypename);
 		// 
 		String singerphotopath = singerphotofile.getOriginalFilename();
 		
@@ -110,8 +112,13 @@ public class SingerController {
 		List<SingerType> singertypeList = singerTypeService.findAllSingerType();
 		Singer singer = singerService.findSingerById(singerid);
 		
+		SingerSingerType singerSingerType = singerSingerTypeService.findTypebySingerid(singerid);
+		Integer singertypeid = singerSingerType.getSingertypeid();
+		SingerType singertype = singerTypeService.findSingerTypeById(singertypeid);
+		
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("singer",singer);
+		mv.addObject("singertype",singertype);
 		mv.addObject("singertypeList",singertypeList);
 		mv.setViewName("admin/editSinger");
 		return mv;
@@ -122,14 +129,38 @@ public class SingerController {
      * @return
      */
 	@RequestMapping(value = "/edit",method = RequestMethod.POST)
-	public String edit(HttpServletRequest request){
+	public String edit(@RequestParam(value = "singerphoto", required = false) MultipartFile singerphotofile,	
+			HttpServletRequest request){
+		Integer singerid = Integer.parseInt(request.getParameter("singerid"));
 		String singername = request.getParameter("singername");				
 		String sex = request.getParameter("sex");		
 		String introduction = request.getParameter("introduction");
 		String singertypename = request.getParameter("singertypename");
 		
-//		singerService.up
-		return "redirect:/musictype/musictypeList";
+		String singerphotopath = singerphotofile.getOriginalFilename();
+		
+		System.out.println(singerphotopath);
+		// tomcat下项目路径
+		String basePath=request.getSession().getServletContext().getRealPath("/");
+		System.out.println(basePath);
+		// 要存储的文件名，File(目标文件名，当前文件名)		
+		File targetFile = new File(basePath+Config.singerphotopath, singerphotopath);
+		
+		if (!targetFile.exists()) {
+			targetFile.mkdirs();
+		}
+		
+		// 保存
+		try {
+			singerphotofile.transferTo(targetFile);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		singerService.update(singerid,singername,sex,introduction, singerphotopath);
+		
+		singerSingerTypeService.updateSingerAndType(singername, singertypename);
+		
+		return "redirect:/singer/singerList";
 	}
 	/**
      * 删除歌曲类别

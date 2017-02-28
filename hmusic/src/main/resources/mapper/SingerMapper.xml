@@ -2,29 +2,38 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.hmusic.dao.SingerDao">
 	<insert id="addSinger" parameterType="Singer">
-		insert into Singer(singername,singerphoto,sex,introduction)
+		insert into singer(singername,singerphoto,sex,introduction)
 		 values(#{singername},#{singerphoto},#{sex},#{introduction})
 	</insert>
 	
 	<update id="updateSinger" parameterType="Singer">
-		update Singer set singername = #{singername},
-		singerphoto = #{singerphoto},
-      introduction = #{introduction},
-      sex = #{sex}
+		update singer set
+		<if test="singername != null">
+       singername = #{singername},
+      </if> 
+      <if test="singerphoto != null">
+       singerphoto = #{singerphoto},
+      </if> 
+      <if test="introduction != null">
+       introduction = #{introduction},
+      </if> 
+      <if test="sex != null">
+         sex = #{sex}
+      </if>     
       where singerid = #{singerid}
 	</update>
 	
 	
 	<delete id="deleteSinger" parameterType="Integer">
-		delete from Singer where singerid = #{singerid}
+		delete from singer where singerid = #{singerid}
 	</delete>
 	
 	<select id="findSingerByID" parameterType="Integer" resultType="Singer">
-		select * from Singer where singerid = #{singerid}
+		select * from singer where singerid = #{singerid}
 	</select>
 	
 	<select id="findSingerByName" parameterType="String" resultType="Singer">
-		select * from Singer where singername = #{singername}
+		select * from singer where singername = #{singername}
 	</select>
 	
 	<resultMap type="Singer" id="singerMap">
@@ -37,7 +46,7 @@
 	</resultMap>
 	
 	<select id="findAllSinger" resultMap="singerMap">
-		select * from Singer 
+		select * from singer 
 	</select>
 	
 </mapper>

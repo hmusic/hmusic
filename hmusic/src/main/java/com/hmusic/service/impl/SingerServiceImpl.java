@@ -69,4 +69,19 @@ public class SingerServiceImpl implements SingerService {
 		}		
 	}
 
+
+	@Override
+	public void update(Integer singerid, String singername, String sex, String introduction, String singerphotopath) {
+		// TODO Auto-generated method stub
+		Singer singer = new Singer();
+		singer.setSingerid(singerid);
+		singer.setSingername(singername);
+		singer.setSex(sex);
+		singer.setIntroduction(introduction);
+		singer.setSingerphoto(Config.singerphotopath+singerphotopath);
+		if (singer != null) {
+			updateSinger(singer);
+		}
+	}
+
 }

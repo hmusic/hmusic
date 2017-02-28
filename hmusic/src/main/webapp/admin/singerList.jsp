@@ -25,9 +25,9 @@
   <table class="table table-hover text-center">
     <tr>
       <th width="5%">歌手ID</th>
-      <th width="10%">姓名</th>
+      <th width="5%">姓名</th>
       <th width="5%">性别</th>
-      <th width="20%">介绍</th>
+      <th width="30%">介绍</th>
       <th width="15%">操作</th>
     </tr>
     <c:forEach items="${singerList}" var="singer">
@@ -36,7 +36,7 @@
       <td>${singer.singername }</td>
       <td>${singer.sex }</td>
       <td>${singer.introduction }</td>
-      <td><div class="button-group"> <a class="button border-main" href="${ctx }/singer/editSinger"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(${singer.singerid})"><span class="icon-trash-o"></span> 删除</a> </div></td>
+      <td><div class="button-group"> <a class="button border-main" href="${ctx }/singer/editLoad?singerid=${singer.singerid }"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(${singer.singerid})"><span class="icon-trash-o"></span> 删除</a> </div></td>
     </tr>
     </c:forEach>
   </table>

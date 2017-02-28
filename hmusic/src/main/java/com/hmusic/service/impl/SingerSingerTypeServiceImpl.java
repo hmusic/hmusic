@@ -38,9 +38,11 @@ public class SingerSingerTypeServiceImpl implements SingerSingerTypeService{
 		
 		if (singer.getSingerid() != null) {
 			singerSingerType.setSingerid(singer.getSingerid());
+			System.out.println(singer.getSingerid());
 		}
 		if (singerType.getSingertypeid() != null) {
 			singerSingerType.setSingertypeid(singerType.getSingertypeid());
+			System.out.println(singerType.getSingertypeid());
 		}
 		
 		singerSingerTypeDao.add(singerSingerType);
@@ -56,6 +58,12 @@ public class SingerSingerTypeServiceImpl implements SingerSingerTypeService{
 		if(singer.getSingerid() != null && singerType.getSingertypeid() != null){
 			singerSingerTypeDao.update(singer.getSingerid(), singerType.getSingertypeid());
 		}
+	}
+
+	@Override
+	public SingerSingerType findTypebySingerid(Integer singerid) {
+		// TODO Auto-generated method stub
+		return singerSingerTypeDao.findBySingerid(singerid);
 	}
 
 }
