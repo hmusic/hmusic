@@ -26,12 +26,8 @@
 	</select>
 	
 	<resultMap type="MusicType" id="musicTypeMap">
-		<id column="commentid" property="commentid"/>
-		<result column="userid" property="userid"/>
-		<result column="musicid" property="musicid"/>
-		<result column="content" property="content"/>
-		<result column="commenttime" property="commenttime"/>
-		<result column="likenum" property="likenum"/>
+		<id column="musictypeid" property="musictypeid"/>
+		<result column="musictypename" property="musictypename"/>
 	</resultMap>
 			
 </mapper>
