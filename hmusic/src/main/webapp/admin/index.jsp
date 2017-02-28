@@ -12,10 +12,7 @@
     <title>后台管理中心</title>  
     <link rel="stylesheet" href="css/pintuer.css">
     <link rel="stylesheet" href="css/admin.css">
-     
-
-     
-
+    
     <script src="js/jquery.js"></script>   
 </head>
 <body style="background-color:#f2f9fd;">

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hmusic.dao.AdminDao">
+	<insert id="add" parameterType="Admin">
+		insert into admin(adminname,adminpassword) values(#{adminname},#{adminpassword})
+	</insert>
+	
+	<update id="updatepassword" parameterType="Admin">
+		update admin set adminpassword=#{adminpassword} where adminname = #{adminname}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from admin where adminid = #{adminid}
+	</delete>
+	
+	<select id="findByID" parameterType="Integer" resultType="Admin">
+		select * from admin where adminid = #{adminid}
+	</select>
+	
+	<select id="findByAdminname" parameterType="String" resultType="Admin">
+	    select * from admin where adminname = #{adminname}
+	</select>
+	
+	<resultMap type="Admin" id="adminMap">
+		<id column="adminid" property="adminid"/>
+		<result column="adminname" property="adminname"/>
+		<result column="adminpassword" property="adminpassword"/>
+	</resultMap>
+	
+	<select id="findAll" resultMap="adminMap">
+		select * from admin
+	</select>
+	
+</mapper>
