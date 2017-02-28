@@ -89,7 +89,7 @@ public class UserController {
 	
 	
 	//修改个人信息
-	
+	/*
    @RequestMapping(value="/edituserinfo",method = RequestMethod.POST)
 	public String edituserinfo(User user,HttpServletRequest request,
 			@RequestParam(value = "userphotofile", required = false) MultipartFile userphotofile)
@@ -112,7 +112,7 @@ public class UserController {
         } 
 	    try {  
 	    	userphotofile.transferTo(userphototargetFile); 
-	    	user1.setUserphoto(path);
+	    	user1.setUserphoto(userphotopath);
         } catch (Exception e) {  
             e.printStackTrace();  
         }
@@ -121,7 +121,7 @@ public class UserController {
 		return"redirect:userinfo.jsp";
 		
 	}
-	
+	*/
 	
 	//修改密码
 		@RequestMapping(value="/resetpassword",method = RequestMethod.POST)
@@ -145,6 +145,36 @@ public class UserController {
 			}
 			
 		}
+		 @RequestMapping(value="/edituserinfo",method = RequestMethod.POST)
+			public String edituserinfo(User user,HttpServletRequest request,
+					@RequestParam(value = "userphotofile", required = false) MultipartFile userphotofile)
+			{
+				HttpSession session=request.getSession();
+				//获取当前登录的用户信息
+				User user1 = (User)session.getAttribute("user"); 
+				user1.setSex(user.getSex());
+				user1.setEmail(user.getEmail());
+				user1.setTelephone(user.getTelephone());
+				//设置头像
+				String userphotopath = userphotofile.getOriginalFilename(); 
+			    System.out.println(userphotopath);  
+			    String path=request.getSession().getServletContext().getRealPath("/")+"upload/";
+			    System.out.println("***********"+path); 
+			    //要存储的文件名，File(目标文件名，当前文件名)
+			    File userphototargetFile = new File(path, userphotopath); 
+			    if(!userphototargetFile.exists()){  
+			    	userphototargetFile.mkdirs();  
+		        } 
+			    try {  
+			    	userphotofile.transferTo(userphototargetFile); 
+			    	user1.setUserphoto("upload/"+userphotopath);
+		        } catch (Exception e) {  
+		            e.printStackTrace();  
+		        }
+				userService.update(user1);
+				return"redirect:userinfo.jsp";
+				
+			}
 	
 }
        
