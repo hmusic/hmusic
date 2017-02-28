@@ -6,17 +6,17 @@
 	</insert>
 	
 	<update id="updateSingerType" parameterType="SingerType">
-		update singertype set singertypename = #{singertypename},
-    where singertypeid = #{id}
+		update singertype set singertypename = #{singertypename}
+    where singertypeid = #{singertypeid}
 	</update>
 	
 	
 	<delete id="deleteSingerType" parameterType="Integer">
-		delete from singertype where singertypeid = #{id}
+		delete from singertype where singertypeid = #{singertypeid}
 	</delete>
 	
 	<select id="findSingerTypeByID" parameterType="Integer" resultType="SingerType">
-		select * from singertype where singertypeid = #{id}
+		select * from singertype where singertypeid = #{singertypeid}
 	</select>
 	
 	<select id="findSingerTypeByName" parameterType="String" resultType="SingerType">

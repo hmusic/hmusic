@@ -39,7 +39,7 @@
     <li><a href="${ctx }/music/musicList" target="right"><span class="icon-caret-right"></span>歌曲管理</a></li>     
     <li><a href="${ctx }/musictype/musictypeList" target="right"><span class="icon-caret-right"></span>歌曲类型管理</a></li>
     <li><a href="${ctx }/singer/singerList" target="right"><span class="icon-caret-right"></span>歌手管理</a></li>   
-    <li><a href="${ctx }/singer/singertypeList" target="right"><span class="icon-caret-right"></span>歌手类别管理</a></li>     
+    <li><a href="${ctx }/singertype/singertypeList" target="right"><span class="icon-caret-right"></span>歌手类别管理</a></li>     
   </ul>  
 </div>
 <script type="text/javascript">
