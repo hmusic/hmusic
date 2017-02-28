@@ -33,12 +33,12 @@ public class MusicServiceImpl implements MusicService {
 		Music music = new Music();
 		music.setMusicname(musicname);
 		
-		MP3Info mp3tool = new MP3Info(Config.musicpath+"//"+musicpath);
-		
+		MP3Info mp3tool = new MP3Info(musicpath);
+		System.out.println(musicpath);
 		music.setDuration(mp3tool.getDuration());
-		music.setMusicphoto(Config.musicphotopath+"//"+musicphotopath);
-		music.setMusicpath(Config.musicpath+"//"+musicpath);
-		music.setLyricspath(Config.lyricspath+"//"+lyricspath);
+		music.setMusicphoto(Config.musicphotopath+musicphotopath);
+		music.setMusicpath(Config.musicpath+musicname+".mp3");
+		music.setLyricspath(Config.lyricspath+lyricspath);
 		music.setClickrate(1);
 		music.setDownloadrate(1);
 		music.setUploadtime(new Date(System.currentTimeMillis()));

@@ -2,12 +2,19 @@ package com.hmusic.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.hmusic.dao.SingerTypeDao;
 import com.hmusic.entity.SingerType;
 import com.hmusic.service.SingerTypeService;
 
+@Service(value = "singerTypeService")
+@Transactional
 public class SingerTypeServiceImpl implements SingerTypeService {
-
+	
+	@Autowired
 	private SingerTypeDao singerTypeDao;
 	
 	public void addSingerType(SingerType singerType) {

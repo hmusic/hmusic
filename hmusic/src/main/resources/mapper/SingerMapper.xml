@@ -3,7 +3,7 @@
 <mapper namespace="com.hmusic.dao.SingerDao">
 	<insert id="addSinger" parameterType="Singer">
 		insert into Singer(singername,singerphoto,sex,introduction)
-		 values(#{singername},#{singerphoto},#{singerSex}#{introduction})
+		 values(#{singername},#{singerphoto},#{sex},#{introduction})
 	</insert>
 	
 	<update id="updateSinger" parameterType="Singer">
@@ -36,8 +36,8 @@
 		<!-- <association property="" column=""></association> -->
 	</resultMap>
 	
-	<select id="findAll" resultMap="singerMap">
-		select * from Singer
+	<select id="findAllSinger" resultMap="singerMap">
+		select * from Singer 
 	</select>
 	
 </mapper>

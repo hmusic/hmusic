@@ -10,6 +10,7 @@ public class SingerType {
 
 	private Integer singertypeid;
 	private String singertypename;
+	
 	public Integer getSingertypeid() {
 		return singertypeid;
 	}

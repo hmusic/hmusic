@@ -20,8 +20,8 @@
 	</select>
 	
 	<resultMap type="SingerType" id="SingerTypeMap">
-		<id column="singerTypeId" property="singerTypeId"/>
-		<result column="singerTypeName" property="singerTypeName"/>
+		<id column="singertypeid" property="singertypeid"/>
+		<result column="singertypename" property="singertypename"/>
 		<!-- <association property="" column=""></association> -->
 	</resultMap>
 	

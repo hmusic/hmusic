@@ -35,11 +35,11 @@
  	-->
   </ul>   
   <h2><span class="icon-pencil-square-o"></span>栏目管理</h2>
-  <ul>
-    <li><a href="${ctx }/user/userList" target="right"><span class="icon-caret-right"></span>用户管理</a></li>
+  <ul>    
     <li><a href="${ctx }/music/musicList" target="right"><span class="icon-caret-right"></span>歌曲管理</a></li>     
     <li><a href="${ctx }/musictype/musictypeList" target="right"><span class="icon-caret-right"></span>歌曲类型管理</a></li>
-    <li><a href="${ctx }/singer/singerList" target="right"><span class="icon-caret-right"></span>歌手管理</a></li>     
+    <li><a href="${ctx }/singer/singerList" target="right"><span class="icon-caret-right"></span>歌手管理</a></li>   
+    <li><a href="${ctx }/singer/singertypeList" target="right"><span class="icon-caret-right"></span>歌手类别管理</a></li>     
   </ul>  
 </div>
 <script type="text/javascript">

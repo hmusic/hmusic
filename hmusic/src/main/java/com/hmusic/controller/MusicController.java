@@ -92,10 +92,13 @@ public class MusicController {
 		String musicphotopath = musicphotofile.getOriginalFilename();
 		String lyricspath = lyricsfile.getOriginalFilename();
 		System.out.println(musicpath);
-		// 要存储的文件名，File(目标文件名，当前文件名)
-		File musictargetFile = new File(Config.musicpath, musicpath);
-		File phototargetFile = new File(Config.musicphotopath, musicphotopath);
-		File lyricstargetFile = new File(Config.lyricspath, lyricspath);
+		// tomcat下项目路径
+		String basePath=request.getSession().getServletContext().getRealPath("/");
+		System.out.println(basePath);
+		// 要存储的文件名，File(目标文件名，当前文件名)		
+		File musictargetFile = new File(basePath+Config.musicpath, musicpath);
+		File phototargetFile = new File(basePath+Config.musicphotopath, musicphotopath);
+		File lyricstargetFile = new File(basePath+Config.lyricspath, lyricspath);
 		if (!musictargetFile.exists()) {
 			musictargetFile.mkdirs();
 		}
@@ -113,7 +116,7 @@ public class MusicController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		musicService.upload(musicname, musicpath, musicphotopath, lyricspath);
+		musicService.upload(musicname, basePath+Config.musicpath+musicpath, musicphotopath, lyricspath);
 		singerMusicService.addSingerMusic(singername, musicname);
 		musicMusicTypeService.addMusicAndType(musicname, musictypename);
 		return "redirect:/music/musicList";

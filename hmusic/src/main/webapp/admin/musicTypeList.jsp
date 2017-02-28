@@ -56,10 +56,10 @@
 		</div>
 		<table class="table table-hover text-center" id="musicTable">
 			<tr>
-				<th width="120">类别ID</th>
-				<th>类别名称</th>
+				<th width="5%">类别ID</th>
+				<th width="10%">类别名称</th>
 				
-				<th>操作</th>
+				<th width="15%">操作</th>
 			</tr>
 			<%----%>
 			<c:forEach items="${musicTypeList}" var="musictype">
