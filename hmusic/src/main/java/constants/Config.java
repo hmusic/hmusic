@@ -8,7 +8,7 @@ public class Config {
 	
 	public static String lyricspath = "E://hmusicfs//lyrics";
 	
-	public static String userphotopath = "E://hmusicfs//userphoto";
+	public static String userphotopath = "upload/userphoto/";
 	
 	
 }

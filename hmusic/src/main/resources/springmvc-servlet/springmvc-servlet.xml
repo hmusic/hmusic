@@ -21,6 +21,7 @@
 	<mvc:resources location="/css/" mapping="/css/**"/>
 	<mvc:resources location="/html/" mapping="/html/**"/>
 	<mvc:resources location="/fonts/" mapping="/fonts/**"/>
+	<mvc:resources location="/upload/" mapping="/upload/**"/>
 	<mvc:resources location="/font-awesome/" mapping="/font-awesome/**"/>
 	<!-- /WEB-INF/page/admin目录下的静态资源文件 -->
 	<mvc:resources location="/admin/css/" mapping="/admin/css/**"/>

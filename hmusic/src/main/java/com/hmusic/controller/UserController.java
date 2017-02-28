@@ -158,7 +158,7 @@ public class UserController {
 				//设置头像
 				String userphotopath = userphotofile.getOriginalFilename(); 
 			    System.out.println(userphotopath);  
-			    String path=request.getSession().getServletContext().getRealPath("/")+"upload/";
+			    String path=request.getSession().getServletContext().getRealPath("/")+Config.userphotopath;
 			    System.out.println("***********"+path); 
 			    //要存储的文件名，File(目标文件名，当前文件名)
 			    File userphototargetFile = new File(path, userphotopath); 
@@ -167,7 +167,7 @@ public class UserController {
 		        } 
 			    try {  
 			    	userphotofile.transferTo(userphototargetFile); 
-			    	user1.setUserphoto("upload/"+userphotopath);
+			    	user1.setUserphoto(Config.userphotopath+userphotopath);
 		        } catch (Exception e) {  
 		            e.printStackTrace();  
 		        }
