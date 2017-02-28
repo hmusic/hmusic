@@ -72,7 +72,7 @@
           <label>歌手图片：</label>
         </div>
         <div class="field">
-        <img alt="" src="${singer.singerphoto }">
+        <img width="200" height="200" alt="" src="../${singer.singerphoto }">
         <input type="file" name="singerphoto" class="upload"/>           
         </div>
       </div>   
